@@ -1,0 +1,179 @@
+﻿/* Shared */
+body 
+{
+    margin:0;
+    padding:0;
+}
+
+/* Top Hat */
+.top-hat
+{
+	background-image: url('../images/discoverability/toolbar_bg.png');
+	background-repeat: repeat-x;
+	color: #000000;
+	display: none;
+	height: 37px;
+	position:relative;
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+}
+
+.top-hat a
+{
+	color: #00319F;
+	text-decoration: underline;
+}
+
+.top-hat .pinning-alignment
+{
+	width: 945px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	padding-top: 8px;
+}
+
+.top-hat .pinning-content
+{
+    line-height: 18px;
+    vertical-align: middle;
+}
+
+.top-hat .pinning-content img
+{
+	cursor:pointer;
+    height:20px;
+    float: left;
+    margin-left: 200px;
+    margin-right: 5px;
+    width:20px;
+}
+
+.top-hat .pinning-content .pinning-desc
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:14px;
+    float: left;
+    vertical-align: middle;
+    padding-top: 2px;
+}
+
+.top-hat .pinning-hide 
+{
+    background:transparent url("../images/discoverability/close.png") no-repeat top left;
+    cursor: pointer;
+	display:block;
+    height: 14px;
+    position: absolute;
+    right: 8px;
+	text-indent:-9999px;
+    top: 11px;
+    width: 14px;
+    }
+
+/* Toast */
+
+	.toast 
+	{
+		display:none;
+		background-color:#fff;
+		color:#000;
+		bottom:0;
+		border:2px solid #999999;
+		border-radius: 8px 8px 0 0;
+		border-bottom:0;
+		/*font-family: Arial, Helvetica, sans-serif;*/
+		font-size:14px;
+		right:20px;
+		line-height:30px;
+		padding:0 24px 0 28px;
+		position:fixed;
+		z-index:9999;
+		}
+
+	.toast  .pinning-hide 
+	{
+		background:transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjVERTE3QUY1ODI0OTExRTA4M0E4RDgwRjVEREU1QjgyIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjVERTE3QUY2ODI0OTExRTA4M0E4RDgwRjVEREU1QjgyIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NURFMTdBRjM4MjQ5MTFFMDgzQThEODBGNURERTVCODIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NURFMTdBRjQ4MjQ5MTFFMDgzQThEODBGNURERTVCODIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz47ZBwtAAABy0lEQVR42mSSS0sbURTHkzuTGHXixOfEhhIKhQa1viIudN8vUZAQum1Wrrtv3NhFXRV0IajtRugnSCtkE8VXdCMSDANp7MLWaTJOMjP9n3IuDPXAj7lzHvece+8/HHpsKugFESBAB7SBE0wK/1c0BAygccxn/wO4BU3gkkMJFD0Bae7kcZGE8hKgB1gUF1w0DFKUpGlaGObJnWnUuKb5QgjyjYDxEJ9B5fH8eDyufN3ff/Nhff01n8nKraxkS6XSO8MwBtg3CvqpqI8W1KELMxsN8bZQWMWPdwb7uLHxvl6vm61Wq81jUzOduo6BRZAFs7FYbGprc/OT7/tOx3Hujo+Ovr+cnFxGbJpzFsBzwTvI2xO2bTvlcvmA1mokolcOKydn1WqD86QJ+QT/OipCzORzubzdbt+en56Wv+zt7aBzd61YXMMkc8iZ5450+6EYjUjOhK4v3tRq3y4vLioTmcwSkl983t3dRvHvVCr1Cjkz3GRQCuApXbOiKF46nR7+Y1nWj2bznkQQjUbVZDJpmKb503VdOhL5r2QhPewzMBCQlhSHx/Swgq6pWAZdVoTKT6MEJCnfmuI1/j7SqmCd6gG92uAX05WJfwUYABIioQaj87brAAAAAElFTkSuQmCC) no-repeat top left;
+		cursor: pointer;
+		display: block;
+		height: 14px;
+		position: absolute;
+		right: 4px;
+		text-indent:-9999px;
+		top: 4px;
+		width: 14px;
+		}
+
+	.toast img 
+	{
+		cursor:pointer;
+		height:22px;
+		position:absolute;
+		top:4px;
+		left:8px;
+		width:22px;
+	}
+	.toast .pinning-main-text
+	{
+		margin-left: 10px;
+	}
+
+/* Push-up */
+.push-up {
+	background:#4DB1DC url("../images/discoverability/background.gif") repeat-x;
+	bottom:0;
+	display: none;
+	height:100px;
+	left:0;
+	position:fixed;
+	width:100%;
+	z-index:9999;
+}
+
+.push-up .pinning-content {
+	height:100px;
+	margin:0 auto;
+	position:relative;
+	width:900px;
+}
+
+	.push-up .pinning-bg {
+		background:transparent url("../images/discoverability/graphic.png") no-repeat;
+		height:100px;
+		margin-left:25px;
+		position:absolute;
+		width:350px;
+	}
+
+	.push-up .pinning-desc {
+		color:#FFFFFF;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size:20px;
+		left:235px;
+		position:absolute;
+		top:24px;
+		z-index:2;
+	}
+
+	.push-up img {
+		height:30px;
+		cursor:pointer;
+		left:121px;
+		position:absolute;
+		top:21px;
+		width:30px;
+	}
+
+	.push-up  .pinning-hide 
+	{
+		background:transparent url("../images/discoverability/close.png") no-repeat top left;
+		cursor: pointer;
+		display: block;
+		height: 14px;
+		position: absolute;
+		right: 8px;
+		text-indent:-9999px;
+		top: 8px;
+		width: 14px;
+		}

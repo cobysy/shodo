@@ -1,0 +1,8 @@
+/* import web-fonts */
+@font-face {
+	font-family: bAtenkoku;
+	font-style: normal;
+	font-weight: normal;
+	src: url('/shared/font/bAtenkoku2010.eot');
+	src: url('/shared/font/bAtenkoku2010.woff') format('woff'), url('/shared/font/bAtenkoku2010.ttf') format('truetype'), url('/shared/font/bAtenkoku2010.otf') format('opentype'), url('/shared/font/bAtenkoku2010.eot');
+}
