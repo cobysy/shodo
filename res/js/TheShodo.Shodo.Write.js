@@ -193,8 +193,8 @@ TheShodo.Shodo.Write.initialize = function () {
         }
 
         this.attachButtonEvents();
-        this.setupKeyEvents();
-        this.initializeStrokeEngine();
+        this.setupKeyEvents();//!!!
+        this.initializeStrokeEngine();//!!!
     },this));
 
 
@@ -258,8 +258,8 @@ TheShodo.Shodo.Write.prepareCopybookSelection = function () {
     }
 }
 
-
-TheShodo.Shodo.Write.initializeStrokeEngine = function () {
+//!!!!!!
+TheShodo.Shodo.Write.initializeStrokeEngine = function () {debugger
     // setup/start StrokeManager/Engine
     var canvas = $('#write-canvas');
     var canvasE = canvas.get(0);
@@ -383,8 +383,8 @@ TheShodo.Shodo.Write.addJumpList = function (title, url, createdAt) {
 //
 // -- Events ------------------------------------------------------------------
 //
-
-TheShodo.Shodo.Write.setupKeyEvents = function () {
+//!!!!!!
+TheShodo.Shodo.Write.setupKeyEvents = function () {debugger
     function isFloatingPanelOpened() { return TheShodo.FloatingPanel.Shared.currentPanelStack.length != 0; }
 
     this.commandHooker.clearMappings();

@@ -40,7 +40,6 @@ TheShodo.Shodo.StrokeManager.prototype.selectBrush = function (brushName) {
     if (this.isLocked) return;
 
     this.endStroke();
-
     this.strokeHistory.push({
         O: TheShodo.Shodo.StrokeManager.StrokeOperation.SetBrush,
         D: brushName
@@ -59,7 +58,6 @@ TheShodo.Shodo.StrokeManager.prototype.setBrushOpacity = function (value) {
     if (this.isLocked) return;
 
     this.endStroke();
-
     this.strokeHistory.push({
         O: TheShodo.Shodo.StrokeManager.StrokeOperation.SetOpacity,
         D: value
@@ -556,6 +554,7 @@ TheShodo.Shodo.StrokeEngine.prototype.spline = function (x0, x1, v0, v1, t) {
     return ((2*x0 - 2*x1 + v0 + v1) * Math.pow(t, 3)) + ((-3*x0 + 3*x1 - 2*v0 - v1) * Math.pow(t, 2)) + v0*t + x0;
 }
 
+//!!!!!!
 TheShodo.Shodo.StrokeEngine.prototype.draw = function (isEnding) {
     /// <summary>Draw stroke line.</summary>
     var pos = this.getBufferedCurrentPosition();

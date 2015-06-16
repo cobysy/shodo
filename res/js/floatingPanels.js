@@ -5,7 +5,6 @@
 /// <reference path="writeBootstrap.js" />
 
 "use strict";
-
 //
 // -- Brush Select Panel ------------------------------------------------------
 //
@@ -103,7 +102,6 @@ TheShodo.Shodo.Write.PanelSelectInk.prototype.onBeforePanelShow = function (sele
         ;
 }
 TheShodo.Shodo.Write.PanelSelectInk.prototype.onInkSelected = function (opacity, texture) { throw "NotImplemented"; }
-
 
 //
 // -- Paper Select Panel ------------------------------------------------------

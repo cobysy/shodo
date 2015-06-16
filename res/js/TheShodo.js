@@ -3,7 +3,6 @@ if (!window.TheShodo) {
 }
 
 (function($TS){
-
 /*---------- Array.forEach ----------*/
 if (!Array.prototype.forEach) {
 	Array.prototype.forEach = function(func /*, thisp*/) {
@@ -76,7 +75,6 @@ try {
 	$TS.isPanelContent = (window.parent && window.parent !== window.window && window.parent.location.host.replace(/:[0-9]+/,'') == location.host.replace(/:[0-9]+/,''));
 } catch(err) {};
 
-
 /*---------- not-webkit ----------*/
 if (!$TS.UA.isWebKit) {
 	$(function(){
@@ -84,12 +82,9 @@ if (!$TS.UA.isWebKit) {
 	});
 }
 
-
 /*---------- browser alert ----------*/
 if (!$TS.UA.isIEgte9) {
-
 $(function(){
-
 if (!$TS.isPanelContent && $('body').is('.home, .gallery, .signin, .write')) {
 	var alertHTML = "";
 	if ($TS.OS.isIE9Installable) {
@@ -109,11 +104,8 @@ if (!$TS.isPanelContent && $('body').is('.home, .gallery, .signin, .write')) {
 	}
 	$('body').addClass('alert-shown').prepend($(alertHTML));
 }
-
 });
-
 }
-
 
 /*---------- pinable ----------*/
 $(function(){
@@ -130,7 +122,6 @@ $(function(){
 		});
 	}
 });
-
 
 /*---------- TheShodo.ENV ----------*/
 $TS.ENV = {};
