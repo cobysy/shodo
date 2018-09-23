@@ -28,11 +28,6 @@ TheShodo.Shodo.Write = {
 // -- EntryPoint --------------------------------------------------------------
 //
 $(document).ready(function () {
-    if (!TheShodo.UA.isCanvasSupported) {
-        $('.block-notice-dummy-canvas').css('display', 'block');
-        return;
-    }
-    
     TheShodo.Shodo.Write.launch();
 });
 
