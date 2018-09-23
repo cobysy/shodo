@@ -55,36 +55,7 @@ TheShodo.Shodo.Write.launch = function () {
 
 
 TheShodo.Shodo.Write.prepareStage = function (ratio, mode) {
-    var ratio, mode;
-    if (window.innerHeight >= 896) {
-        // SXGA
-        ratio = 1.308;
-        mode = 'sxga';
-    } else if (window.innerHeight >= 681) {
-        // WXGA
-        ratio = 1.08;
-        mode = 'wxga';
-    } else {
-        // Default
-        TheShodo.Shodo.Write.preloadImages.push(TheShodo.sharedBaseUrl + '/res/img/frame.png');
-        return;
-    }
-
-    TheShodo.Shodo.Write.preloadImages.push(TheShodo.sharedBaseUrl + '/res/img/' + mode + '/frame.png');
-    $('body').addClass('screen-mode-' + mode);
-    $('#layered-canvas, #write-canvas, #hand-canvas').each(function (i, e) {
-        e.width *= ratio;
-        e.height *= ratio;
-    });
-    $('#hanshi-image, #write-bunchin, #write-shitajiki').each(function (i, e) {
-        var node = $(e);
-        node.attr('src', node.attr('src').replace(/(.*\/)/, "$1" + mode + "/"));
-    });
-
-    TheShodo.Shodo.Write.pageMode = mode || '';
-    TheShodo.Shodo.Write.pageScale = mode || 1.0;
-    //TheShodo.Shodo.Shared.StrokeEngine.width = $('#write-canvas').prop('width');
-    //TheShodo.Shodo.Shared.StrokeEngine.height = $('#write-canvas').prop('height');
+    TheShodo.Shodo.Write.preloadImages.push(TheShodo.sharedBaseUrl + '/res/img/frame.png');
 }
 
 TheShodo.Shodo.Write.showLoading = function () {
@@ -179,7 +150,6 @@ TheShodo.Shodo.Write.initialize = function () {
             this.isUAInlineSVGSupported = true;
         }
     }
-
     // show all elements & setup
     $('#write-tools-movie').fadeOut(this.videoFadeOutDuration, $.proxy(function () {
         // prepare
