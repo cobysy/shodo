@@ -10,10 +10,10 @@ TheShodo.Shodo.Write = {
     alwaysSkipIntro       : false,
     isUAInlineSVGSupported: false,
     preloadImages         : [
-        '/shared/img/write/icon_checkbox_01.png',
-        '/shared/img/write/icon_checkbox_01_o.png',
-        '/shared/img/write/icon_checkbox_02.png',
-        '/shared/img/write/icon_checkbox_02_o.png',
+        '/res/img/icon_checkbox_01.png',
+        '/res/img/icon_checkbox_01_o.png',
+        '/res/img/icon_checkbox_02.png',
+        '/res/img/icon_checkbox_02_o.png',
     ].map(function (e) { return TheShodo.sharedBaseUrl + e; }),
 
     currentPaper: 'hanshi',
@@ -71,11 +71,11 @@ TheShodo.Shodo.Write.prepareStage = function (ratio, mode) {
         mode = 'wxga';
     } else {
         // Default
-        TheShodo.Shodo.Write.preloadImages.push(TheShodo.sharedBaseUrl + '/shared/img/write/frame.png');
+        TheShodo.Shodo.Write.preloadImages.push(TheShodo.sharedBaseUrl + '/res/img/frame.png');
         return;
     }
 
-    TheShodo.Shodo.Write.preloadImages.push(TheShodo.sharedBaseUrl + '/shared/img/write/' + mode + '/frame.png');
+    TheShodo.Shodo.Write.preloadImages.push(TheShodo.sharedBaseUrl + '/res/img/' + mode + '/frame.png');
     $('body').addClass('screen-mode-' + mode);
     $('#layered-canvas, #write-canvas, #hand-canvas').each(function (i, e) {
         e.width *= ratio;
@@ -338,7 +338,7 @@ TheShodo.Shodo.Write.selectPaper = function (paperName) {
     var paperNameWithMode = ((TheShodo.Shodo.Write.pageMode == '') ? '' : TheShodo.Shodo.Write.pageMode + '/') + paperName;
 
     TheShodo.Shodo.Write.currentPaper = paperName;
-    $('#hanshi-image').attr('src', 'shared/img/write/' + paperNameWithMode + '.png');
+    $('#hanshi-image').attr('src', 'res/img/' + paperNameWithMode + '.png');
 }
 
 TheShodo.Shodo.Write.selectLogo = function (logoName) {
@@ -346,7 +346,7 @@ TheShodo.Shodo.Write.selectLogo = function (logoName) {
 
     // select logo
     if (logoName) {
-        $('#logo-image').fadeIn('fast').attr('src', 'shared/img/write/' + logoName + '.png');
+        $('#logo-image').fadeIn('fast').attr('src', 'res/img/' + logoName + '.png');
     } else {
         $('#logo-image').fadeOut('fast');
     }
