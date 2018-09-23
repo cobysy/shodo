@@ -122,17 +122,17 @@ TheShodo.Shodo.Write.playIntro = function () {
 
 TheShodo.Shodo.Write.initialize = function () {
     // Check Inline SVG
-    if (TheShodo.UA.isSVGSupported) {
-        if ($('svg').get(0).namespaceURI == 'http://www.w3.org/2000/svg') {
-            this.isUAInlineSVGSupported = true;
-        }
-    }
+    // if (TheShodo.UA.isSVGSupported) {
+    //     if ($('svg').get(0).namespaceURI == 'http://www.w3.org/2000/svg') {
+    //         this.isUAInlineSVGSupported = true;
+    //     }
+    // }
     // show all elements & setup
     $('#write-tools-movie').fadeOut(this.videoFadeOutDuration, $.proxy(function () {
         // prepare
-        if (this.isUAInlineSVGSupported) {
+        // if (this.isUAInlineSVGSupported) {
             this.prepareCopybookSelection();
-        }
+        // }
 
         this.attachButtonEvents();
         this.setupKeyEvents();
@@ -141,9 +141,9 @@ TheShodo.Shodo.Write.initialize = function () {
 
 
     // show tools
-    if (this.isUAInlineSVGSupported) {
+    // if (this.isUAInlineSVGSupported) {
         $('#top-menu .menu-copybook').css('display', 'inline-block');
-    }
+    // }
     $('#top-menu').animate({ top: '0px' }, 'fast');
     $('#write-fude-medium').css('visibility', 'hidden');
     $('#write-tools-ink').fadeIn('fast');
