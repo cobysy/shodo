@@ -84,37 +84,6 @@ if (!$TS.UA.isWebKit) {
 	});
 }
 
-
-/*---------- browser alert ----------*/
-if (!$TS.UA.isIEgte9) {
-
-$(function(){
-
-if (!$TS.isPanelContent && $('body').is('.home, .gallery, .signin, .write')) {
-	var alertHTML = "";
-	if ($TS.OS.isIE9Installable) {
-		alertHTML = [
-			  '<div class="useragent-alert">'
-			, '<p>FUNCTION LIMITED. Get the best experience with Internet Explorer 10.</p>'
-			, '<div class="link"><a href="http://www.beautyoftheweb.com" target="_blank">Beauty of the Web for Upgrading to Internet Explorer</a></div>'
-			, '</div>'
-		].join('');
-	} else {
-		alertHTML = [
-			  '<div class="useragent-alert">'
-			, '<p>FUNCTION LIMITED. Get the best experience with Internet Explorer 10.</p>'
-			, '<div class="link"><a href="http://www.beautyoftheweb.com" target="_blank">Beauty of the Web for Upgrading to Internet Explorer</a> <span class="note">* Internet Explorer 9 requires Windows Vista or Windows 7.</span></div>'
-			, '</div>'
-		].join('');
-	}
-	$('body').addClass('alert-shown').prepend($(alertHTML));
-}
-
-});
-
-}
-
-
 /*---------- pinable ----------*/
 $(function(){
 	if (window == window.parent) {
