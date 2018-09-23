@@ -10,19 +10,12 @@
 <meta name="msapplication-tooltip" content="The Shodo">
 <meta name="msapplication-starturl" content="/">
 <meta name="msapplication-window" content="width=1024;height=768">
-<meta name="msapplication-task" content="name=Write;action-uri=Write;icon-uri=/favicon.ico">
-<meta name="msapplication-task" content="name=Gallery;action-uri=Gallery;icon-uri=/favicon.ico">
-<meta name="msapplication-TileImage" content="shared/img/icon_shodo_tile_01.png">
-<meta name="msapplication-TileColor" content="#ffffff">
 <script type="text/javascript">try { Typekit.load(); } catch (e) { }</script> 
-<link rel="shortcut icon" href="http://www.theshodo.com/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="res/css/base.css">
 <link rel="stylesheet" href="res/css/font.css">
-<!--[if lt IE 9]><script src="res/ie.html5.js"></script><![endif]-->
 <script src="res/js/jquery-1.7.min.js"></script>
 <script src="res/js/TheShodo.js"></script>
 <script src="res/js/TheShodo.FloatingPanel.js"></script>
-<!-- local-resources -->
 <link rel="stylesheet" href="res/css/index.css">
 <script src="res/js/TheShodo.Shodo.Core.js"></script>
 <script src="res/js/TheShodo.Shodo.Player.js"></script>
@@ -30,7 +23,6 @@
 <script src="res/js/TheShodo.Shodo.Write.js"></script>
 <script src="res/js/kazari.js"></script>
 <script src="res/js/floatingPanels.js"></script>
-<!-- /local-resources -->
 </head>
 <body class="write">
 <header class="site-title">
@@ -40,14 +32,14 @@
 <article class="content">
 
 
-<div class="write-stage" style="display: block;">
+<div class="write-stage">
 <div class="write-container">
 <div class="write-container-wrap">
 
 <div id="write-paper">
-<img id="write-shitajiki" src="res/img/shitajiki.png" alt="" style="display: inline;">
+<img id="write-shitajiki" src="res/img/shitajiki.png" alt="">
 
-<div id="write-hanshi" style="display: block;">
+<div id="write-hanshi">
 <div id="copybook-layer">
 <!-- Include: shared/img/write/copybook/copybook_all.svg -->
 <svg version="1.1" id="copybook" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="342.875px" height="334.375px" viewBox="0.109 0 342.875 334.375" enable-background="new 0.109 0 342.875 334.375" xml:space="preserve">
@@ -332,24 +324,24 @@
 <canvas id="hand-canvas" width="415" height="498"></canvas>
 
 <div id="hanshi"><img id="hanshi-image" src="res/img/hanshi.png" alt=""></div>
-<div id="hand"><div id="hand-image" style="top: 270.5px; left: 83px; display: none;">
-<img id="hand-image-large" src="res/img/hand_L.png" width="374" height="563" alt="" style="display: none;">
-<img id="hand-image-medium" src="res/img/hand_M.png" width="407" height="552" alt="" style="display: inline;">
-<img id="hand-image-small" src="res/img/hand_S.png" width="401" height="540" alt="" style="display: none;">
+<div id="hand"><div id="hand-image">
+<img id="hand-image-large" src="res/img/hand_L.png" width="374" height="563" alt="">
+<img id="hand-image-medium" src="res/img/hand_M.png" width="407" height="552" alt="">
+<img id="hand-image-small" src="res/img/hand_S.png" width="401" height="540" alt="">
 </div></div>
 <!-- /write-hanshi --></div>
 
-<img id="write-bunchin" src="res/img/bunchin.png" alt="" style="display: inline;">
+<img id="write-bunchin" src="res/img/bunchin.png" alt="">
 <!-- /write-paper --></div>
 
 <div id="write-tools">
-<video id="write-tools-movie" width="540" height="640" poster="res/img/steel.png" style="display: none;">
+<video id="write-tools-movie" width="540" height="640" poster="res/img/steel.png">
 <source src="res/media/movie.mp4" type="video/mp4">
 </video>
 <a id="write-tools-ink"><img id="write-tools-ink-label" class="rollover" src="res/img/btn_suzuri_01.png" alt="硯 - Ink Selection"></a>
 <a id="write-tools-stage">
 <img id="write-tools-stage-label" class="rollover" src="res/img/btn_fude_01.png" alt="筆 - Brush Selection">
-<img id="write-fude-small" src="res/img/fude_L.png" alt=""><img id="write-fude-medium" src="res/img/fude_M.png" alt="" style="visibility: hidden; opacity: 0;"><img id="write-fude-large" src="res/img/fude_B.png" alt="" style="visibility: visible; opacity: 1;">
+<img id="write-fude-small" src="res/img/fude_L.png" alt=""><img id="write-fude-medium" src="res/img/fude_M.png" alt=""><img id="write-fude-large" src="res/img/fude_B.png" alt="">
 <!-- /write-tools-stage --></a>
 
 <a id="hand-visibility-checkbox" class="checked">show hand holding brush</a>
@@ -467,11 +459,7 @@
 </div>
 </script>
 
-
-<span class="playing-movie-notice" style="left: 1078px; top: 232px; display: none;"><span>Preparing ink.</span><br><span>Please wait a moment.</span></span></article>
-
-
-
+</article>
 
 <!-- floating panel -->
 <div class="floating-mask" style="display: none;">

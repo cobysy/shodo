@@ -43,9 +43,6 @@ TheShodo.Shodo.Write.launch = function () {
 
     this.prepareStage();
 
-
-    $('.write-stage').show();
-
     this.showLoading();
 
     this.skipIntro = TheShodo.Shodo.Write.alwaysSkipIntro ||
@@ -101,27 +98,6 @@ TheShodo.Shodo.Write.onLoadingComplete = function () {
 }
 
 TheShodo.Shodo.Write.playIntro = function () {
-    var blocker = function (e) {
-        e.preventDefault(); e.stopPropagation();
-        $('.playing-movie-notice').hide().remove();
-
-        var offset = $(this).offset();
-        var x = e.pageX - offset.left;
-        var y = e.pageY - offset.top;
-
-        $('<span class="playing-movie-notice" />')
-            .html('<span>Preparing ink.</span><br /><span>Please wait a moment.</span>')
-            .css('left', (x - 162/2) + 'px')
-            .css('top', (y - 56) +'px')
-            .appendTo($('.content'))
-            .fadeIn()
-            .delay(1000)
-            .fadeOut()
-        ;
-    }
-
-    $('body .content').click(blocker);
-    
     var videoE = $('#write-tools-movie')
         //.bind('ended', function(e) { $('#write-tools').fadeIn(); })
         .fadeIn()
@@ -132,7 +108,7 @@ TheShodo.Shodo.Write.playIntro = function () {
                 $('body .content').unbind('click', blocker);
 
                 // skip intro at next time
-                // Kazari.SessionStorage.setItem('TheShodo.Shodo.Write.skipIntro', true);
+                Kazari.SessionStorage.setItem('TheShodo.Shodo.Write.skipIntro', true);
                 
                 // prepare
                 TheShodo.Shodo.Write.initialize();
