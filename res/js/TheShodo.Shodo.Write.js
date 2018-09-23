@@ -107,8 +107,6 @@ TheShodo.Shodo.Write.playIntro = function () {
             if ($(this).prop('currentTime') > TheShodo.Shodo.Write.videoFadeOutTiming) {
                 $(this).unbind('timeupdate', arguments.callee);
                 
-                $('body .content').unbind('click', blocker);
-
                 // skip intro at next time
                 Kazari.SessionStorage.setItem('TheShodo.Shodo.Write.skipIntro', true);
                 
