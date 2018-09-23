@@ -156,7 +156,7 @@ a {
 	left: 50%;
 	margin: -149px 0 0 -185px;
 	width: 370px;
-	background: #666666 url(res/img/bg_panel_body_01.svg);
+	background: #666666; /* url(../img/bg_panel_body_01.svg); */
 	color: #ffffff;
 	box-shadow: 0 0 7px 1px rgba(0,0,0,0.65);
 }
@@ -164,7 +164,7 @@ a {
 	margin: 0;
 	padding: 10px;
 	height: 16px;
-	background: #333333 url(res/img/bg_panel_title_01.png) repeat-x;
+	background: #333333; /* url(../img/bg_panel_title_01.png) repeat-x; */
 	font-size: 15px;
 	font-weight: normal;
 }

@@ -398,24 +398,29 @@ article.content
 	color: #ffffff;
 	text-align: center;
 	text-decoration: none;
-	background: url(../img/bg_topmenu_btn-left_01.png) top left no-repeat, url(../img/bg_topmenu_btn-center_01.png) top center repeat-x;
+	/* background: url(../img/bg_topmenu_btn-left_01.png) top left no-repeat, 
+				url(../img/bg_topmenu_btn-center_01.png) top center repeat-x; */
 }
 #top-menu > li > a:hover
 {
 	color: #ffffff;
 	background-color: #444444;
-	background: url(../img/bg_topmenu_btn-left_01_h.png) top left no-repeat, url(../img/bg_topmenu_btn-center_01_h.png) top center repeat-x;
+	/* background: url(../img/bg_topmenu_btn-left_01_h.png) top left no-repeat, 
+				url(../img/bg_topmenu_btn-center_01_h.png) top center repeat-x; */
 }
-#top-menu > li:nth-child(2) a
+/* #top-menu > li:nth-child(2) a
 {
-	background: url(../img/bg_topmenu_btn-center_01.png) top left no-repeat, url(../img/bg_topmenu_btn-center_01.png) top center repeat-x;
+	background: url(../img/bg_topmenu_btn-center_01.png) top left no-repeat, 
+				url(../img/bg_topmenu_btn-center_01.png) top center repeat-x;
 }
 #top-menu > li:nth-child(2) a:hover
 {
-	background: url(../img/bg_topmenu_btn-center_01_h.png) top left no-repeat, url(../img/bg_topmenu_btn-center_01_h.png) top center repeat-x;
-}
+	background: url(../img/bg_topmenu_btn-center_01_h.png) top left no-repeat, 
+				url(../img/bg_topmenu_btn-center_01_h.png) top center repeat-x;
+} */
 
-#top-menu > li:first-child a
+/* #top-menu > li:first-child a */
+#top-menu > li a
 {
 	border-right: 1px dotted #4d4d4d;
 }
@@ -429,18 +434,21 @@ article.content
 {
 	display: none;
 }
-#top-menu .menu-folding > a:first-child
+/* #top-menu .menu-folding > a:first-child
 {
-	background: url(../img/bg_topmenu_btn-left_01.png) top left no-repeat, url(../img/bg_topmenu_btn-center_01.png) top center repeat-x;
+	background: url(../img/bg_topmenu_btn-left_01.png) top left no-repeat, 
+				url(../img/bg_topmenu_btn-center_01.png) top center repeat-x;
 }
 #top-menu .menu-folding > a:first-child:hover
 {
-	background: url(../img/bg_topmenu_btn-left_01_h.png) top left no-repeat, url(../img/bg_topmenu_btn-center_01_h.png) top center repeat-x;
-}
+	background: url(../img/bg_topmenu_btn-left_01_h.png) top left no-repeat, 
+				url(../img/bg_topmenu_btn-center_01_h.png) top center repeat-x;
+} */
 #top-menu .menu-folding.menu-opened > a:first-child
 {
 	background: #1f1f1f;
-	background: url(../img/bg_topmenu_btn-center_01_h.png) top left no-repeat, url(../img/bg_topmenu_btn-center_01_h.png) top center repeat-x;
+	/* background: url(../img/bg_topmenu_btn-center_01_h.png) top left no-repeat, 
+				url(../img/bg_topmenu_btn-center_01_h.png) top center repeat-x; */
 	border-bottom: 1px solid #000000;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -455,7 +463,7 @@ article.content
 	
 	width: 225px;  /* Overridable */
 	height: 300px;
-	background: #1f1f1f url(../img/bg_copybook_01.svg);
+	background: #1f1f1f; /* url(../img/bg_copybook_01.svg); */
 	background-image: -ms-linear-gradient(top, #1F1F1F 0%, #333333 100%);
 	background-image: linear-gradient(top, #1F1F1F 0%, #333333 100%);
 	padding: 36px 18px 18px;
@@ -559,7 +567,7 @@ article.content
 }
 #top-menu .menu-folding .close-menu:before
 {
-	content: url(../img/icon_close_01.png);
+	/* content: url(../img/icon_close_01.png); */
 	padding-right: 2px;
 	vertical-align: -1px;
 }
@@ -572,15 +580,21 @@ article.content
 	display: inline;
 }
 
+#top-menu .menu-clear a {
+	width: 70px;
+}
+#top-menu .menu-finish a {
+	width: 70px;
+}
 
 /* menu#top-paper > paper */
-#top-menu .menu-paper
+/* #top-menu .menu-paper
 {
 	margin-left: 8px;
-}
+} */
 #top-menu .menu-paper #button-paper
 {
-	width: 50px;
+	width: 70px;
 }
 #top-menu .menu-paper.menu-folding > .submenu
 {
@@ -594,7 +608,7 @@ article.content
 #top-menu .menu-paper.menu-folding > .submenu:before
 {
 	/* override */
-	width: 50px;
+	width: 70px;
 }
 #top-menu .menu-paper.menu-folding > .submenu #paper-select
 {
@@ -630,7 +644,6 @@ article.content
 #top-menu .menu-copybook
 {
 	display: none;
-	margin-left: 8px;
 }
 #top-menu .menu-copybook #button-copybook
 {

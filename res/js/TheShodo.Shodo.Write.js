@@ -11,8 +11,8 @@ TheShodo.Shodo.Write = {
     isUAInlineSVGSupported: false,
     preloadImages         : [
         '/res/img/icon_checkbox_01.png',
-        '/res/img/icon_checkbox_01_o.png',
-        '/res/img/icon_checkbox_02.png',
+        //'/res/img/icon_checkbox_01_o.png',
+        //'/res/img/icon_checkbox_02.png',
         '/res/img/icon_checkbox_02_o.png',
     ].map(function (e) { return TheShodo.sharedBaseUrl + e; }),
 
