@@ -45,6 +45,8 @@ TheShodo.Shodo.Write.launch = function () {
 
     this.showLoading();
 
+    $('.write-stage').show();
+
     this.skipIntro = TheShodo.Shodo.Write.alwaysSkipIntro ||
                      Kazari.SessionStorage.getItem('TheShodo.Shodo.Write.skipIntro', false) ||
                      Kazari.LocalStorage.getItem('TheShodo.Shodo.Write.skipIntro', false);
