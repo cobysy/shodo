@@ -174,7 +174,7 @@ TheShodo.Shodo.Write.initialize = function () {
     $('#write-tools-stage').fadeIn('fast', function () { $('body').addClass('write-ready'); });
 
     // Set Rollover
-    $('.content a')
+    /* $('.content a')
         .hover(function (e) {
             // in
             $(this).find('img.rollover').each(function (i, e) {
@@ -185,7 +185,7 @@ TheShodo.Shodo.Write.initialize = function () {
             $(this).find('img.rollover').each(function (i, e) {
                 e.src = e.src.replace(/_o(\.\w+)$/, '$1');
             });
-        });
+        }); */
 }
 
 TheShodo.Shodo.Write.prepareCopybookSelection = function () {
