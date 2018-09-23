@@ -213,10 +213,10 @@ TheShodo.Shodo.Write.prepareCopybookSelection = function () {
                 .addClass(gCloned.id)
                 .prepend(svgImage)
                 .end()
-            .find('.label img')
-                .attr('src', imageSrc)
-                .attr('alt', title)
-                .end()
+            // .find('.label img')
+            //     .attr('src', imageSrc)
+            //     .attr('alt', title)
+            //     .end()
             .insertBefore(freeSelect)
         ;
     }

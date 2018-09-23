@@ -576,12 +576,12 @@ article.content
 }
 #top-menu .menu-paper #button-paper
 {
-	width: 90px;
+	width: 50px;
 }
 #top-menu .menu-paper.menu-folding > .submenu
 {
 	/* override */
-	width: 210px;
+	width: 140px;
 	height: 270px;
 	padding-left: 14px;
 	padding-right: 14px;
@@ -590,7 +590,7 @@ article.content
 #top-menu .menu-paper.menu-folding > .submenu:before
 {
 	/* override */
-	width: 90px;
+	width: 50px;
 }
 #top-menu .menu-paper.menu-folding > .submenu #paper-select
 {
