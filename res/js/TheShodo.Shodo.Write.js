@@ -265,6 +265,7 @@ TheShodo.Shodo.Write.setBrushColor = function (color) {
     TheShodo.Shodo.Shared.StrokeManager.setBrushColor(color);
 
     // handImage Color
+    /*
     var color = TheShodo.Shodo.Shared.StrokeManager.getBrushColor();
     $('#hand-image img').each(function (i, e) {
         var handImage = $(e);
@@ -275,7 +276,7 @@ TheShodo.Shodo.Write.setBrushColor = function (color) {
             : (color == 0xB6B615) ? '_yellow'
                                   : ''
         ) + '.png')); // color
-    });
+    });*/
 }
 
 TheShodo.Shodo.Write.clear = function () {
