@@ -22,6 +22,11 @@ body {
 	height: 100%;
 	min-height: 631px;
 	max-height: 731px;
+
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 img {
 	border: 0 none;
