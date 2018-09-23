@@ -133,6 +133,7 @@ TheShodo.Shodo.Write.playIntro = function () {
 
                 // skip intro at next time
                 Kazari.SessionStorage.setItem('TheShodo.Shodo.Write.skipIntro', true);
+                
                 // prepare
                 TheShodo.Shodo.Write.initialize();
             }
@@ -306,34 +307,6 @@ TheShodo.Shodo.Write.selectPaper = function (paperName) {
 }
 
 //
-// -- Utility ------------------------------------------------------------------
-//
-
-TheShodo.Shodo.Write.addJumpList = function (title, url, createdAt) {
-    if (TheShodo.UA.isSiteMode) {
-        var recentMyWorks = Kazari.LocalStorage.getItem("TheShodo.Shodo.Write.recentMyWorks", []);
-        recentMyWorks.unshift({ title: title, url: url, createdAt: createdAt.getTime() });
-        if (recentMyWorks.length > 20) {
-            recentMyWorks.pop();
-        }
-        Kazari.LocalStorage.setItem("TheShodo.Shodo.Write.recentMyWorks", recentMyWorks);
-
-        // build jumplist
-        window.external.msSiteModeCreateJumplist(TheShodo.Shodo.Resources.Write.String.Jumplist_Label_RecentMyWorks || "Recent My Works");
-        recentMyWorks.forEach(function (e, i) {
-            var label = e.title.replace(/\r|\n/g, "");
-            var createdAt = new Date(e.createdAt);
-            if (label.length > 15) {
-                label = label.slice(0, 15) + "...";
-            }
-            label += " (" + (createdAt.getYear()+1900) + "/" + (createdAt.getMonth() + 1) + "/" + createdAt.getDate() + " " + (createdAt.getHours() < 10 ? "0" : "") + createdAt.getHours() + ":" + (createdAt.getMinutes() < 10 ? "0" : "") + createdAt.getMinutes() + ")";
-            window.external.msSiteModeAddJumpListItem(label, e.url, "/favicon.ico");
-        });
-        window.external.msSiteModeShowJumplist();
-    }
-}
-
-//
 // -- Events ------------------------------------------------------------------
 //
 
@@ -412,37 +385,6 @@ TheShodo.Shodo.Write.onSave = function (sender, e) {
     };
 
     //if (window.console && window.console.log) console.log(JSON.stringify(data));
-
-    $.ajax({
-        type: 'POST',
-        url: formE.action,
-        data: JSON.stringify(sendData),
-        beforeSend: function (xhr) {
-                        xhr.setRequestHeader('X-RequestVerificationToken', formE['__RequestVerificationToken'].value);
-                    },
-        success: function (data, textStatus, xhr) {
-                    if (data && data.IsCommitted) {
-                        TheShodo.Shodo.Write.LoadingPanel.close();
-                        // add JumpList
-                        TheShodo.Shodo.Write.addJumpList(sendData.Comment, data.Url, new Date());
-                        // show Entry Page
-                        var panel = new TheShodo.Shodo.Write.EntryPanel(data.Url, '/Gallery');
-                        panel.show();
-                    } else if (data && data.ErrorMessage) {
-                        TheShodo.Shodo.Write.ErrorMessageBox.show(TheShodo.Shodo.Resources.Write.String.SendErrorOnDone, "Error: "+data.ErrorMessage);
-                        TheShodo.Shodo.Write.LoadingPanel.close();
-                    } else {
-                        TheShodo.Shodo.Write.ErrorMessageBox.show(TheShodo.Shodo.Resources.Write.String.SendErrorOnDone, "Error: Unknown");
-                        TheShodo.Shodo.Write.LoadingPanel.close();
-                    }
-                },
-        error: function (xhr, textStatus, error) {
-            TheShodo.Shodo.Write.ErrorMessageBox.show(TheShodo.Shodo.Resources.Write.String.SendErrorOnDone, "Error: "+error);
-            TheShodo.Shodo.Write.LoadingPanel.close();
-        },
-        contentType: 'application/json',
-        dataType: 'json'
-    });
 
     TheShodo.Shodo.Write.LoadingPanel.show();
 }
