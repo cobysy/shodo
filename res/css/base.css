@@ -92,8 +92,8 @@ video {
 	padding: 10px 0 0 69px;
 	min-width: 911px;
 	min-height: 48px;
-	background: #6c2c2f url(../img/icon_alert_01.png) 22px 50% no-repeat;
-	background: url(../img/icon_alert_01.png) 22px 50% no-repeat, #6c2c2f url(../img/bg_alert_01.png) 0 0 repeat-x;
+	background: #6c2c2f url(res/img/icon_alert_01.png) 22px 50% no-repeat;
+	background: url(res/img/icon_alert_01.png) 22px 50% no-repeat, #6c2c2f url(res/img/bg_alert_01.png) 0 0 repeat-x;
 	color: #ffffff;
 	font-size: 18px;
 	line-height: 20px;
@@ -111,12 +111,12 @@ video {
 	text-decoration: none;
 }
 .useragent-alert .link a[target]:before {
-	content: url(../img/icon_window_01.png);
+	content: url(res/img/icon_window_01.png);
 	padding: 0 5px 0 0;
 	vertical-align: 0;
 }
 .useragent-alert .link a[target]:hover:before {
-	content: url(../img/icon_window_01_h.png);
+	content: url(res/img/icon_window_01_h.png);
 }
 .useragent-alert .link .note {
 	margin: 0 0 0 5px;
@@ -286,7 +286,7 @@ video {
 	margin: 4px 0 0;
 	width: 14px;
 	height: 12px;
-	background: url(../img/icon_sound_01.png) no-repeat scroll 0 50%;
+	background: url(res/img/icon_sound_01.png) no-repeat scroll 0 50%;
 	cursor: pointer;
 }
 .sound-control .bar {
@@ -295,14 +295,14 @@ video {
 	padding: 0 4px 0 3px;
 	width: 80px;
 	height: 15px;
-	background: url(../img/bar_sound_04.png) no-repeat scroll 0 50%, url(../img/bar_sound_03.png) no-repeat scroll 0 50%, url(../img/bar_sound_02.png) no-repeat scroll -80px 50%, url(../img/bar_sound_01.png) no-repeat scroll 3px 50%;
+	background: url(res/img/bar_sound_04.png) no-repeat scroll 0 50%, url(res/img/bar_sound_03.png) no-repeat scroll 0 50%, url(res/img/bar_sound_02.png) no-repeat scroll -80px 50%, url(res/img/bar_sound_01.png) no-repeat scroll 3px 50%;
 	visibility: hidden;
 }
 .sound-control:hover .bar {
 	visibility: visible;
 }
 .sound-control.pseudo-muted .mute {
-	background-image: url(../img/icon_sound_02.png);
+	background-image: url(res/img/icon_sound_02.png);
 }
 
 
@@ -322,7 +322,7 @@ video {
 }
 .introduce-ie9 a:hover::before,
 .introduce-ie9 a:focus::before {
-	content: url(../img/button_ie9_01_h.png);
+	content: url(res/img/button_ie9_01_h.png);
 }
 
 
@@ -380,7 +380,7 @@ video {
 	min-width: 980px;
 	min-height: 631px;
 	max-height: 731px;
-	background: url(../img/bg_mask_01.png);
+	background: url(res/img/bg_mask_01.png);
 	background: rgba(0, 0, 0, 0.7);
 	overflow: hidden;
 }
@@ -397,7 +397,7 @@ video {
 	left: 50%;
 	margin: -149px 0 0 -185px;
 	width: 370px;
-	background: #666666 url(../img/bg_panel_body_01.svg);
+	background: #666666 url(res/img/bg_panel_body_01.svg);
 	color: #ffffff;
 	box-shadow: 0 0 7px 1px rgba(0,0,0,0.65);
 }
@@ -405,7 +405,7 @@ video {
 	margin: 0;
 	padding: 10px;
 	height: 16px;
-	background: #333333 url(../img/bg_panel_title_01.png) repeat-x;
+	background: #333333 url(res/img/bg_panel_title_01.png) repeat-x;
 	font-size: 15px;
 	font-weight: normal;
 }
@@ -427,13 +427,13 @@ video {
 }
 .floating-panel .floating-panel-close :link:before,
 .floating-panel .floating-panel-close :visited:before {
-	content: url(../img/icon_close_01.png);
+	content: url(res/img/icon_close_01.png);
 	padding-right: 2px;
 	vertical-align: -1px;
 }
 .floating-panel .floating-panel-close :link:hover:before,
 .floating-panel .floating-panel-close :visited:hover:before {
-	content: url(../img/icon_close_01_h.png);
+	content: url(res/img/icon_close_01_h.png);
 }
 
 .floating-panel-body .floating-panel-buttons {
@@ -446,7 +446,7 @@ video {
 .floating-panel-body .floating-panel-buttons input[type=submit] {
 	border-style: none;
 	background-color: #000000;
-	background:  url(../img/bg_panel_btn-left_01.png) top left no-repeat, url(../img/bg_panel_btn-right_01.png) top right no-repeat, url(../img/bg_panel_btn-center_01.png) top left repeat-x;
+	background:  url(res/img/bg_panel_btn-left_01.png) top left no-repeat, url(res/img/bg_panel_btn-right_01.png) top right no-repeat, url(res/img/bg_panel_btn-center_01.png) top left repeat-x;
 	color: #ffffff;
 	font-family: "adobe-garamond-pro-1","adobe-garamond-pro-2",serif;
 	font-size: 16px;
@@ -466,17 +466,17 @@ video {
 .floating-panel-body .floating-panel-buttons input[type=button].cancel,
 .floating-panel-body .floating-panel-buttons input[type=submit].cancel {
 	background: #444444;
-	background:  url(../img/bg_panel_cancelbtn-left_01.png) top left no-repeat, url(../img/bg_panel_cancelbtn-right_01.png) top right no-repeat, url(../img/bg_panel_cancelbtn-center_01.png) top center repeat-x;
+	background:  url(res/img/bg_panel_cancelbtn-left_01.png) top left no-repeat, url(res/img/bg_panel_cancelbtn-right_01.png) top right no-repeat, url(res/img/bg_panel_cancelbtn-center_01.png) top center repeat-x;
 }
 .floating-panel-body .floating-panel-buttons input[type=button].cancel:hover,
 .floating-panel-body .floating-panel-buttons input[type=submit].cancel:hover {
 	background: #4c4c4c;
-	background:  url(../img/bg_panel_cancelbtn-left_01_h.png) top left no-repeat, url(../img/bg_panel_cancelbtn-right_01_h.png) top right no-repeat, url(../img/bg_panel_cancelbtn-center_01_h.png) top center repeat-x;
+	background:  url(res/img/bg_panel_cancelbtn-left_01_h.png) top left no-repeat, url(res/img/bg_panel_cancelbtn-right_01_h.png) top right no-repeat, url(res/img/bg_panel_cancelbtn-center_01_h.png) top center repeat-x;
 }
 .floating-panel-body .floating-panel-buttons input[type=button]:hover,
 .floating-panel-body .floating-panel-buttons input[type=submit]:hover {
 	background: #444444;
-	background:  url(../img/bg_panel_btn-left_01_h.png) top left no-repeat, url(../img/bg_panel_btn-right_01_h.png) top right no-repeat, url(../img/bg_panel_btn-center_01_h.png) top center repeat-x;
+	background:  url(res/img/bg_panel_btn-left_01_h.png) top left no-repeat, url(res/img/bg_panel_btn-right_01_h.png) top right no-repeat, url(res/img/bg_panel_btn-center_01_h.png) top center repeat-x;
 }
 .floating-panel-body .floating-panel-buttons input[type=button][disabled],
 .floating-panel-body .floating-panel-buttons input[type=submit][disabled] {
