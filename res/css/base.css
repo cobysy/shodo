@@ -76,7 +76,9 @@ video {
 	font-style: inherit;
 	font-weight: inherit;
 }
-
+a {
+    cursor: pointer;
+}
 
 /* link */
 :link,
