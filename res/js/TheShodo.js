@@ -362,7 +362,10 @@ if ($TS.UA.isAudioSupported) {
 			return;
 		}
 		this.player.loop = true;
-		if ($TS.UA.isWebKit) {
+		this.player.addEventListener('canplay', function () {
+			this.play();
+		});
+		/*if ($TS.UA.isWebKit) {
 			this.player.addEventListener('canplay', $TS.createDelegate(function(){
 				this.player.volume = 0;
 				this.player.muted  = true;
@@ -385,7 +388,7 @@ if ($TS.UA.isAudioSupported) {
 			this.player.addEventListener('ended', $TS.createDelegate(function(){
 				this.player.currentTime = 0;
 			}, this), false);
-		}
+		}*/
 		this.load();
 	};
 	$TS.BGM.load = function(){
