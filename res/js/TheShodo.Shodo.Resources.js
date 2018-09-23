@@ -91,11 +91,10 @@ TheShodo.Shodo.Paper.createClippedImageCanvas = function (image, x, y, width, he
 TheShodo.Shodo.Paper.createPaperFromName = function (nameOrDataUrl, mode) {
     var canvas = document.createElement('canvas');
     var image = document.createElement('img');
-
     if (nameOrDataUrl.match(/^data:image/)) {
         image.src = nameOrDataUrl;
     } else {
-        image.src = TheShodo.baseUrl + '/shared/img/write/' + (mode ? mode + '/' : '') + nameOrDataUrl + '.png';
+        image.src = TheShodo.baseUrl + '/img/' + (mode ? mode + '/' : '') + nameOrDataUrl + '.png';
     }
 
     return image;

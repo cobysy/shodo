@@ -250,21 +250,6 @@ article.content
 	z-index: 4;
 }
 
-/* "Internet Explorer" logo layer */
-#logo-layer
-{
-	display: none;
-	z-index: 5;
-	position: absolute;
-	right: 15px;
-	bottom: 10px;
-	line-height: 1;
-}
-#logo-layer img
-{
-	vertical-align: bottom;
-}
-
 /* copybook layer */
 #copybook-layer
 {
@@ -614,13 +599,6 @@ article.content
 	width: 138px;
 	float: left;
 }
-#top-menu .menu-paper.menu-folding > .submenu #logo-select
-{
-	margin: 0 0 0 3px;
-	padding: 0;
-	width: 60px;
-	float: left;
-}
 #top-menu .menu-paper.menu-folding .close-menu
 {
 	right: 16px;
@@ -643,13 +621,6 @@ article.content
 	color: white;
 	top: 40px;
 	left: 19px;
-}
-#top-menu .menu-paper.menu-folding > .submenu .label-logo
-{
-	position: absolute;
-	color: white;
-	top: 40px;
-	left: 158px;
 }
 /* menu#top-menu > copybook */
 #top-menu .menu-copybook

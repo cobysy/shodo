@@ -170,7 +170,6 @@ TheShodo.Shodo.Write.initialize = function () {
     $('#top-menu').animate({ top: '0px' }, 'fast');
     $('#write-fude-medium').css('visibility', 'hidden');
     $('#write-tools-ink').fadeIn('fast');
-    $('#logo-layer').fadeIn('fast');
     $('#write-tools-stage').fadeIn('fast', function () { $('body').addClass('write-ready'); });
 
     // Set Rollover
@@ -237,7 +236,6 @@ TheShodo.Shodo.Write.initializeStrokeEngine = function () {
     $('#hand-visibility-checkbox').show().toggleClass('checked', isHandVisible);
 
     TheShodo.Shodo.Shared.StrokeEngine = new TheShodo.Shodo.StrokeEngine(canvasE.width, canvasE.height, canvas, layeredCanvasE);
-    TheShodo.Shodo.Shared.StrokeEngine.onImageCreated = TheShodo.Shodo.Write.onImageCreated;
     TheShodo.Shodo.Shared.StrokeManager = new TheShodo.Shodo.StrokeManager(handCanvas, TheShodo.Shodo.Shared.StrokeEngine);
     TheShodo.Shodo.Shared.StrokeManager.isHandVisible = isHandVisible;
     TheShodo.Shodo.Shared.StrokeManager.start();
@@ -304,17 +302,6 @@ TheShodo.Shodo.Write.selectPaper = function (paperName) {
 
     TheShodo.Shodo.Write.currentPaper = paperName;
     $('#hanshi-image').attr('src', 'res/img/' + paperNameWithMode + '.png');
-}
-
-TheShodo.Shodo.Write.selectLogo = function (logoName) {
-    /// <summary>Set Logo</summary>
-
-    // select logo
-    if (logoName) {
-        $('#logo-image').fadeIn('fast').attr('src', 'res/img/' + logoName + '.png');
-    } else {
-        $('#logo-image').fadeOut('fast');
-    }
 }
 
 //
@@ -390,9 +377,8 @@ TheShodo.Shodo.Write.attachButtonEvents = function () {
     // [Copybook]
     $('#copybook-select a').click(TheShodo.Shodo.Write.onCopybookItemClicked);
 
-    // [Paper/Logo]
+    // [Paper]
     $('#paper-select a').click(TheShodo.Shodo.Write.onSelectPaperClicked);
-    $('#logo-select a').click(TheShodo.Shodo.Write.onSelectLogoClicked);
 
     // Menus
     $('.close-menu').click(TheShodo.Shodo.Write.onMenuCloseClicked);
@@ -499,24 +485,6 @@ TheShodo.Shodo.Write.onSelectPaperClicked = function (e) {
     ;
 }
 
-// On "Select Logo" Clicked
-TheShodo.Shodo.Write.onSelectLogoClicked = function (e) {
-    e.preventDefault();
-
-    TheShodo.Shodo.Write.selectLogo($(this).data('logo-name'));
-
-    // mark
-    $(this)
-        .parents('menu').first()
-            .find('li')
-                .removeClass('selected')
-                .end()
-            .end().end()
-        .parent()
-            .addClass('selected')
-    ;
-}
-
 // On [Finish] (top-menu) Clicked
 TheShodo.Shodo.Write.onFinishButtonClicked = function (e) {
     e.preventDefault();
@@ -598,7 +566,7 @@ TheShodo.Shodo.Write.onClear = function (e) {
     ;
 }
 
-// On [Copybook]or[Paper/Logo] Clicked
+// On [Copybook]or[Paper] Clicked
 TheShodo.Shodo.Write.onMenuButtonClicked = function (e) {
     e.preventDefault();
     var container = $(this).parent();
@@ -616,7 +584,7 @@ TheShodo.Shodo.Write.onMenuButtonClicked = function (e) {
 
 }
 
-// On [Copybook]or[Paper/Logo] -> [x Close] Clicked
+// On [Copybook]or[Paper] -> [x Close] Clicked
 TheShodo.Shodo.Write.onMenuCloseClicked = function (e) {
     e.preventDefault();
     // close
@@ -656,16 +624,4 @@ TheShodo.Shodo.Write.onCopybookItemClicked = function (e) {
         .parent()
             .addClass('selected')
     ;
-}
-
-TheShodo.Shodo.Write.onImageCreated = function (canvas) {
-    // draw logo
-    var ctx = canvas.getContext('2d');
-    var logoImage = $('#logo-image:visible')[0];
-    if (logoImage) {
-        ctx.drawImage(logoImage,
-                     (canvas.width - logoImage.width) - 15,
-                     (canvas.height - logoImage.height) - 10,
-                     logoImage.width, logoImage.height);
-    }
 }

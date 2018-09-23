@@ -17,23 +17,11 @@
 <script type="text/javascript">try { Typekit.load(); } catch (e) { }</script> 
 <link rel="shortcut icon" href="http://www.theshodo.com/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="res/css/base.css">
-<link rel="stylesheet" href="res/css/discoverability.css">
 <link rel="stylesheet" href="res/css/font.css">
 <!--[if lt IE 9]><script src="res/ie.html5.js"></script><![endif]-->
 <script src="res/js/jquery-1.7.min.js"></script>
-<script src="res/js/jquery.pinable.js"></script>
 <script src="res/js/TheShodo.js"></script>
 <script src="res/js/TheShodo.FloatingPanel.js"></script>
-<script>
-    TheShodo.baseUrl = 'http://localhost:5000';
-    TheShodo.storageBaseUrl = 'http://blob.theshodo.com';
-    TheShodo.sharedBaseUrl = 'http://localhost:5000';
-    TheShodo.antiForgeryToken = {
-        name: '__RequestVerificationToken',
-        token: '8e5yC/fexKdI3FbMX7cwnxv7Sn3sTKzbiMWeJAbPrgPx+HqNdmJX6NPmJetMFHd9Kd4J36bYqUslnztNwyy2sOZYTvPUZlwm5xZawvmS6/b7DyQs6M9ol4dgJ5O3qU3p6QBzx1bkt5X4TOSJSts/inNdFR8KW9Zy3uHkx5ioG4AWLAu6'
-    };
-    TheShodo.isSignedIn = false;
-</script>
 <!-- local-resources -->
 <link rel="stylesheet" href="res/css/index.css">
 <script src="res/js/TheShodo.Shodo.Core.js"></script>
@@ -382,7 +370,6 @@
 </svg>
 <!--[if lt IE 9]></path></path></path></g></g></g></svg><![endif]-->
 <!-- copybook-layer --></div>
-<div id="logo-layer" style="display: block;"><img id="logo-image" src="res/img/paper_logo_01.png" alt=""></div>
 
 <canvas id="layered-canvas" width="415" height="498"></canvas>
 <canvas id="write-canvas" width="415" height="498"></canvas>
@@ -420,7 +407,7 @@
 <menu type="list" id="top-menu" style="top: 0px;">
 <li class="menu-clear"><a id="button-clear" href="#/Write#">Clear</a></li>
 <li class="menu-finish"><a id="button-finish" href="#/Write#">Finish</a></li>
-<li class="menu-paper menu-folding"><a id="button-paper" href="#/Write#">Paper/Logo</a>
+<li class="menu-paper menu-folding"><a id="button-paper" href="#/Write#">Paper</a>
 <div class="submenu">
 <span class="label-paper">Paper</span>
 <menu type="list" id="paper-select">
@@ -432,13 +419,6 @@
 <li><a data-paper-name="paper_05" href="#/Write#"><img src="res/img/paper_thumb_05.png" width="54" height="54"></a></li>
 <li><a data-paper-name="paper_06" href="#/Write#"><img src="res/img/paper_thumb_06.png" width="54" height="54"></a></li>
 <li><a data-paper-name="paper_07" href="#/Write#"><img src="res/img/paper_thumb_07.png" width="54" height="54"></a></li>
-</menu>
-<span class="label-logo">Logo</span>
-<menu type="list" id="logo-select">
-<li class="selected"><a data-logo-name="paper_logo_01" href="#/Write#"><img src="res/img/paper_logo_thumb_01.png" width="54" height="54"></a></li>
-<li><a data-logo-name="paper_logo_02" href="#/Write#"><img src="res/img/paper_logo_thumb_02.png" width="54" height="54"></a></li>
-<li><a data-logo-name="paper_logo_03" href="#/Write#"><img src="res/img/paper_logo_thumb_03.png" width="54" height="54"></a></li>
-<li><a data-logo-name="" class="none" href=""><img src="res/img/paper_logo_thumb_04.png" width="54" height="54"></a></li>
 </menu>
 <!-- /submenu --></div>
 <a class="close-menu" href="">Close</a>
@@ -795,6 +775,7 @@
 <li class="paper-paper_07" data-paper-name="paper_07"><a href="#"><img src="res/img/paper_07.png" width="64" height="64" alt="paper_06" /></a></li>
 </menu>
 </script>
+
 
 <script type="text/html" id="floating-panel-content-finish">
 <div class="finish-form">

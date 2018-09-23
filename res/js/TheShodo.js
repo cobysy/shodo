@@ -84,23 +84,6 @@ if (!$TS.UA.isWebKit) {
 	});
 }
 
-/*---------- pinable ----------*/
-$(function(){
-	if (window == window.parent) {
-		$(document).ready(function() {
-			$('body').pinable({
-				discStyle  : 'toast',
-				closeTitle : 'Close',
-				dragAlt    : 'Drag me!',
-				message    : 'Drag this icon to your taskbar',
-				elementId  : 'pinning-discoverability',
-				logoPath   : TheShodo.sharedBaseUrl + '/shared/img/icon_pin_01.png'
-			});
-		});
-	}
-});
-
-
 /*---------- TheShodo.ENV ----------*/
 $TS.ENV = {};
 $TS.ENV.volume  = 0.5;
