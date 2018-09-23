@@ -1,8 +1,7 @@
-/// <reference path="../jquery-1.4.2-vsdoc.js" />
-/// <reference path="../TheShodo.js" />
-/// <reference path="../TheShodo.Shodo.Core.js" />
-/// <reference path="../TheShodo.Shodo.Resources.js" />
-/// <reference path="writeBootstrap.js" />
+/// <reference path="jquery-1.7.min.js" />
+/// <reference path="TheShodo.js" />
+/// <reference path="TheShodo.Shodo.Core.js" />
+/// <reference path="TheShodo.Shodo.Resources.js" />
 
 "use strict";
 
