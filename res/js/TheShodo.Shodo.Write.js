@@ -132,7 +132,7 @@ TheShodo.Shodo.Write.playIntro = function () {
                 $('body .content').unbind('click', blocker);
 
                 // skip intro at next time
-                Kazari.SessionStorage.setItem('TheShodo.Shodo.Write.skipIntro', true);
+                // Kazari.SessionStorage.setItem('TheShodo.Shodo.Write.skipIntro', true);
                 
                 // prepare
                 TheShodo.Shodo.Write.initialize();
