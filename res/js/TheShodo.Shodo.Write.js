@@ -1,6 +1,6 @@
-﻿/// <reference path="../TheShodo.js" />
-/// <reference path="../TheShodo.Shodo.Core.js" />
-/// <reference path="../TheShodo.Shodo.Resources.js" />
+﻿/// <reference path="TheShodo.js" />
+/// <reference path="TheShodo.Shodo.Core.js" />
+/// <reference path="TheShodo.Shodo.Resources.js" />
 /// <reference path="kazari.js" />
 
 TheShodo.Shodo.Write = {
