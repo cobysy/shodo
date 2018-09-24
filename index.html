@@ -332,7 +332,7 @@
 <!-- /write-paper --></div>
 
 <div id="write-tools">
-<video id="write-tools-movie" width="540" height="640" poster="res/img/steel.png">
+<video id="write-tools-movie" width="540" height="640" poster="res/img/steel.png" muted="muted">
 <source src="res/media/movie.mp4" type="video/mp4">
 </video>
 <a id="write-tools-ink"><img id="write-tools-ink-label" class="rollover" src="res/img/btn_suzuri_01.png" alt="硯 - Ink Selection"></a>
@@ -473,7 +473,8 @@
 </div>
 <!-- /floating panel -->
 
-<audio class="bgm" loop="">
+<iframe src="res/media/silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+<audio class="bgm" loop>
 <source src="res/media/bgm_01.ogg" type="audio/ogg">
 </audio>
 

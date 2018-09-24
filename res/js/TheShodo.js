@@ -117,9 +117,9 @@ if (true) {
 			return;
 		}
 		this.player.loop = true;
-		// this.player.addEventListener('canplay', function () {
-		// 	this.play();
-		// });
+		this.player.addEventListener('canplay', function () {
+			this.play();
+		});
 		this.load();
 	};
 	$TS.BGM.load = function(){
@@ -129,7 +129,7 @@ if (true) {
 		this.player.play();
 	};
 	$(function(){
-		if ($TS.BGM.isEnabled) {
+		if (true) {
 			$TS.BGM.init();
 		}
 	});
