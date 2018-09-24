@@ -45,14 +45,14 @@ gulp.task('assets', ['clean'], function () {
 gulp.task('styles', ['clean'], function () {
     return gulp.src(globs.css)
         .pipe(concat('bundle.css'))
-        //.pipe(minifyCSS())
+        .pipe(minifyCSS())
         .pipe(gulp.dest(globs.dist + '/res/css'));
 });
 
 gulp.task('scripts', ['clean'], function () {
     return gulp.src(globs.js)
         .pipe(concat('bundle.js'))
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest(globs.dist + '/res/js'));
 });
 
