@@ -1,0 +1,16 @@
+{
+  "name": "theshodo.com-revived",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "lint": "eslint --fix-dry-run **/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cobysy"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/cobysy"
+}
