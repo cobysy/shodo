@@ -507,12 +507,11 @@ TheShodo.Shodo.Write.onMenuButtonClicked = function (e) {
 TheShodo.Shodo.Write.onMenuCloseClicked = function (e) {
     e.preventDefault();
     // close
-    $(this)
+    var smClose = $(this)
         .parents('.menu-folding')
-            .find('.submenu')
-                .fadeOut('fast', function () { $(this).parent().removeClass('menu-opened'); })
-                .end()
-    ;
+        .find('.submenu');
+    smClose.parent().removeClass('menu-opened');
+    smClose.fadeOut('fast');
 }
 
 // On Copybook Selection Item selected
