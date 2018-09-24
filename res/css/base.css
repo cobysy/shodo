@@ -16,7 +16,7 @@ html {
 	height: 100%;
 }
 body {
-	font-family: "adobe-garamond-pro-1","adobe-garamond-pro-2",serif;
+	font-family: "adobe-garamond-pro-1","adobe-garamond-pro-2",garamond,serif;
 	font-size: 14px;
 	line-height: 16px;
 	height: 100%;
@@ -209,7 +209,6 @@ a {
 				 url(../img/bg_panel_btn-right_01.png) top right no-repeat, 
 				 url(../img/bg_panel_btn-center_01.png) top left repeat-x; */
 	color: #ffffff;
-	font-family: "adobe-garamond-pro-1","adobe-garamond-pro-2",serif;
 	font-size: 16px;
 	line-height: 30px;
 	height: 30px;
