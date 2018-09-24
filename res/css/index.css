@@ -283,7 +283,7 @@ article.content
 	margin-left: -200px;
 	margin-top: -200px;
 }
-#copybook-layer svg|svg
+#copybook-layer svg
 {
 	position: absolute;
 	left: 50%;
@@ -293,20 +293,20 @@ article.content
 }
 
 /* 基 */
-#copybook-layer.ki svg|svg
+#copybook-layer.ki svg
 {
 	margin-left: -162px;
 	margin-top: -193px;
 }
 /* 速 */
-#copybook-layer.bi svg|svg
+#copybook-layer.bi svg
 {
 	margin-left: -172px;
 	margin-top: -203px;
 }
 
 /* 美 */
-#copybook-layer.soku svg|svg
+#copybook-layer.soku svg
 {
 	margin-left: -168px;
 	margin-top: -203px;
@@ -665,24 +665,24 @@ article.content
 
 
 /* SVG */
-#copybook-select li svg|svg
+#copybook-select li svg
 {
 	width: 32px;
 	height: 32px;
 }
-#copybook-select li svg|svg g
+#copybook-select li svg g
 {
 	width: 32px;
 	height: 32px;
 	display: none;
 }
-#copybook-select li svg|svg path,
-#copybook-select li svg|svg polygon
+#copybook-select li svg path,
+#copybook-select li svg polygon
 {
 	opacity: 1;
 }
-#copybook-select li svg|svg g:not(#html5):not(#windows) path,
-#copybook-select li svg|svg g:not(#html5):not(#windows) polygon
+#copybook-select li svg g:not(#html5):not(#windows) path,
+#copybook-select li svg g:not(#html5):not(#windows) polygon
 {
 	fill: #000000;
 	opacity: 1;
