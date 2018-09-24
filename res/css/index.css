@@ -929,7 +929,7 @@ article.content
 	margin: 0;
 	padding: 2px 0 2px 1px;
 	width: 22px;
-	background: url(../img/bg_tenkoku-middle_01.png) 0 0 repeat-y;
+	/* background: url(../img/bg_tenkoku-middle_01.png) 0 0 repeat-y; */
 	color: #c9171e;
 	font-size: 10px;
 	line-height: 10px;
@@ -938,14 +938,14 @@ article.content
 	text-align: center;
 }
 .panel-finish .tenkoku:before {
-	content: url(../img/bg_tenkoku-top_01.png);
+	/* content: url(../img/bg_tenkoku-top_01.png); */
 	display: block;
 	position: absolute;
 	top: -8px;
 	left: 0;
 }
 .panel-finish .tenkoku:after {
-	content: url(../img/bg_tenkoku-bottom_01.png);
+	/* content: url(../img/bg_tenkoku-bottom_01.png); */
 	display: block;
 	position: absolute;
 	bottom: -3px;
@@ -955,7 +955,7 @@ article.content
 	text-decoration: none;
 	font-size: 12px;
 	padding-left: 14px;
-	background: url(../img/icon_replay_02.png) center left no-repeat;
+	/* background: url(../img/icon_replay_02.png) center left no-repeat; */
 }
 
 /* Panel loading */
