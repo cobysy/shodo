@@ -14,7 +14,7 @@ $TS.sharedBaseUrl = '';
 $TS.isPanelContent = false;
 try {
 	$TS.isPanelContent = (window.parent && window.parent !== window.window && window.parent.location.host.replace(/:[0-9]+/,'') == location.host.replace(/:[0-9]+/,''));
-} catch(err) {};
+} catch(err) { /* */ }
 
 /*---------- TheShodo.createDelegate ----------*/
 $TS.createDelegate = function(func, aThis){

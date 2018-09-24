@@ -79,7 +79,6 @@ TheShodo.Shodo.Write.showLoading = function () {
             TheShodo.Shodo.Write.onLoadingComplete();
         }, this))
         .start();
-    ;
 }
 
 TheShodo.Shodo.Write.onLoadingComplete = function () {

@@ -1,4 +1,4 @@
-module.exports = {
+{
     "env": {
         "browser": true,
         "jquery": true
@@ -12,21 +12,17 @@ module.exports = {
         "ecmaVersion": 5
     },
     "rules": {
-        "indent": [
-            "error",
-            4
-        ],
+        "no-unused-vars": "off",
+        "no-console": "off",
+        "no-redeclare": "off",
+        "no-mixed-spaces-and-tabs": "off",
+        "no-constant-condition": "off",
+        "indent": "off",
         "linebreak-style": [
             "error",
             "unix"
         ],
-        "quotes": [
-            "error",
-            "double"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ]
+        "quotes": "off",
+        "semi": "off"
     }
-};
+}

@@ -4,13 +4,13 @@
   "description": "",
   "main": "",
   "scripts": {
-    "lint": "eslint --fix-dry-run **/*.js"
+    "lint": "eslint --fix-dry-run --ignore-pattern *.min.js ."
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cobysy"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "homepage": "https://github.com/cobysy"
 }

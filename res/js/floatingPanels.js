@@ -223,6 +223,7 @@ TheShodo.Shodo.Write.PanelFinish.prototype.onBeforePanelShow = function (imageDa
     var defaultName = Kazari.LocalStorage.getItem('TheShodo.Shodo.Write.tenkokuName', '');
     var normalizeTenkoku = function (e) {
         var value = e.target.value;
+        // eslint-disable-next-line no-useless-escape
         var newValue = value.replace(/[^a-zA-Z0-9\-]/g, '').replace(/(^\s+|\s+$)/g, '');
         if (value != newValue) {
             e.target.value = newValue;

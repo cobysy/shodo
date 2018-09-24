@@ -168,12 +168,12 @@ TheShodo.Shodo.StrokeManager.prototype.undoStroke = function () {
 
     throw "NotSupported";
 
-    this.strokeEngine.endStroke();
-    this.strokeHistory.pop();
-    this.currentStroke = null;
-    this.strokeEngine.undoStroke();
+    // this.strokeEngine.endStroke();
+    // this.strokeHistory.pop();
+    // this.currentStroke = null;
+    // this.strokeEngine.undoStroke();
 
-    return this;
+    // return this;
 }
 
 TheShodo.Shodo.StrokeManager.prototype.start = function () {
