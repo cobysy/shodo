@@ -176,13 +176,13 @@ TheShodo.Shodo.Write.prepareCopybookSelection = function () {
         svgImage.setAttribute('width', '32px');
         gCloned.style.display = 'block';
 
-        var title = gCloned.getAttributeNS('http://www.w3.org/1999/xlink', 'title');
+        // var title = gCloned.getAttributeNS('http://www.w3.org/1999/xlink', 'title');
         
-        var image = gCloned.getElementsByTagName('image')[0];
-        var imageSrc;
-        if (image) {
-            imageSrc = image.getAttributeNS('http://www.w3.org/1999/xlink', 'href');
-        }
+        // var image = gCloned.getElementsByTagName('image')[0];
+        // var imageSrc;
+        // if (image) {
+        //     imageSrc = image.getAttributeNS('http://www.w3.org/1999/xlink', 'href');
+        // }
 
         $('<li><a class="" href="#"><span class="label"><img src="" alt="" /></span></a></li>')
             .find('a')
