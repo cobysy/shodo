@@ -837,13 +837,14 @@ article.content
 {
 	color: #cccccc;
 	font-size: 10px;
-	font-family: Verdana, sans-serif;
 	line-height: 1;
+}
+.floating-panel-buttons input {
+	font-family: Garamond, Georgia, serif;
 }
 .panel-finish textarea,
 .panel-finish input[type=text]
 {
-	font-family: 'Crimson Text', 'Adobe Garamond Pro', serif;
 	color: #ffffff;
 	background-color: #888888;
 	padding: 5px;
@@ -933,7 +934,6 @@ article.content
 	color: #c9171e;
 	font-size: 10px;
 	line-height: 10px;
-	font-family: bAtenkoku, monospace;
 	text-transform: uppercase;
 	text-align: center;
 }
