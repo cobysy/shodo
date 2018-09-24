@@ -38,7 +38,7 @@ $(document).ready(function () {
 TheShodo.Shodo.Write.launch = function () {
     this.commandHooker = new Kazari.CommandHooker();
     this.commandHooker.setup(window);
-    this.commandHooker.addMapping(['s'], function () { $('#write-tools-movie').prop('currentTime', TheShodo.Shodo.Write.videoFadeOutTiming); });
+    this.commandHooker.addMapping(['esc'], function () { $('#write-tools-movie').prop('currentTime', TheShodo.Shodo.Write.videoFadeOutTiming); });
 
     this.prepareStage();
 
@@ -306,9 +306,8 @@ TheShodo.Shodo.Write.setupKeyEvents = function () {
             }
         }
     );
-    this.commandHooker.addMapping(['del'], function () { if (!isFloatingPanelOpened()) TheShodo.Shodo.Write.clear(); });
+    this.commandHooker.addMapping(['bs'], function () { if (!isFloatingPanelOpened()) TheShodo.Shodo.Write.clear(); });
     this.commandHooker.addMapping(['d'], function () { if (!isFloatingPanelOpened()) TheShodo.Shodo.Write.clear(); });
-    this.commandHooker.addMapping(['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'], function () { window.location = 'http://www.b-architects.com/'; });
 }
 
 // Attach tools button events

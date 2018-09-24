@@ -1,5 +1,5 @@
 /**
- * Kazari "è¸" JavaScript library
+ * Kazari "ÔøΩÔøΩ" JavaScript library
  * 
  */
 
@@ -375,6 +375,7 @@ Kazari.CommandHooker.prototype._friendlySeqMap = {
     ,'backspace': 8
     ,'bs'     : 8
     ,'del'    : 46
+    ,'esc'    : 27
 }
 
 Kazari.CommandHooker.prototype.setup = function (bindTarget) {
