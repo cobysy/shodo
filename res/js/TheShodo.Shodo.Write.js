@@ -357,9 +357,44 @@ TheShodo.Shodo.Write.onSave = function (sender, e) {
         , Background: TheShodo.Shodo.Write.currentPaper
     };
 
+    /*
     //if (window.console && window.console.log) console.log(JSON.stringify(data));
 
     TheShodo.Shodo.Write.LoadingPanel.show();
+    */
+
+    (function () {
+        var today = new Date();
+        var y = today.getFullYear();
+        // JavaScript months are 0-based.
+        var m = today.getMonth() + 1;
+        var d = today.getDate();
+        var h = today.getHours();
+        var mi = today.getMinutes();
+        var s = today.getSeconds();
+        
+        var anchor = document.createElement('a'),
+            fileName = 'theshodo.com-revived-'
+                + sendData["Tenkoku"].toUpperCase()
+                + "-" + y + "-" + m + "-" + d + "-" + h + "-" + mi + "-" + s
+                + '.png';
+
+        // set a attributes
+        anchor.setAttribute("href", sendData.Data);
+        anchor.setAttribute('target', '_blank');
+        anchor.setAttribute('download', fileName);
+
+        // simulate click
+        if (document.createEvent) {
+            var evtObj = document.createEvent('MouseEvents');
+            evtObj.initEvent('click', true, true);
+            anchor.dispatchEvent(evtObj);
+        }
+        else if (anchor.click) {
+            anchor.click();
+        }
+    })();
+
 }
 
 // On Ink Clicked
