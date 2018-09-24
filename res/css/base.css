@@ -16,7 +16,7 @@ html {
 	height: 100%;
 }
 body {
-	font-family: "adobe-garamond-pro-1","adobe-garamond-pro-2",serif;
+	font-family: Garamond, Georgia, serif;
 	font-size: 14px;
 	line-height: 16px;
 	height: 100%;
@@ -71,7 +71,9 @@ video {
 	font-style: inherit;
 	font-weight: inherit;
 }
-
+a {
+    cursor: pointer;
+}
 
 /* link */
 :link,
@@ -85,43 +87,6 @@ video {
 :visited:focus,
 :visited:active {
 	color: #aaaaaa;
-}
-
-/* useragent-alert */
-.useragent-alert {
-	padding: 10px 0 0 69px;
-	min-width: 911px;
-	min-height: 48px;
-	background: #6c2c2f url(../img/icon_alert_01.png) 22px 50% no-repeat;
-	background: url(../img/icon_alert_01.png) 22px 50% no-repeat, #6c2c2f url(../img/bg_alert_01.png) 0 0 repeat-x;
-	color: #ffffff;
-	font-size: 18px;
-	line-height: 20px;
-}
-.useragent-alert p {
-	margin: 0;
-	padding: 0;
-}
-.useragent-alert .link {
-	font-size: 12px;
-	line-height: 20px;
-	font-family: Verdana, sans-serif;
-}
-.useragent-alert .link a {
-	text-decoration: none;
-}
-.useragent-alert .link a[target]:before {
-	content: url(../img/icon_window_01.png);
-	padding: 0 5px 0 0;
-	vertical-align: 0;
-}
-.useragent-alert .link a[target]:hover:before {
-	content: url(../img/icon_window_01_h.png);
-}
-.useragent-alert .link .note {
-	margin: 0 0 0 5px;
-	font-size: 10px;
-	font-family: Verdana, sans-serif;
 }
 
 
@@ -162,212 +127,6 @@ video {
 }
 
 
-
-/* site-information */
-.site-information {
-	position: relative;
-	z-index: 1;
-	margin: -91px 0 0;
-	min-width: 980px;
-	min-height: 91px;
-	_height: 91px;
-	background: #000000;
-}
-
-
-/* utilities */
-.utilities {
-	margin: 0 20px;
-	padding: 11px 0 5px;
-	border-bottom: 1px solid #4d4d4d;
-	overflow: hidden;
-}
-.utilities::after {
-	content: ".";
-	clear: both;
-	display: block;
-	height: 0;
-	visibility: hidden;
-}
-
-
-/* navigation */
-.site-navigation {
-	float: left;
-	padding: 0;
-	font-size: 14px;
-}
-.site-navigation::after {
-	content: '.';
-	clear: both;
-	display: block;
-	height: 0;
-	visibility: hidden;
-}
-.site-navigation ul {
-	float: left;
-	margin: 0;
-	padding: 0 0 0 8px;
-	height: 18px;
-	list-style-type: none;
-	border-left: 1px solid #4d4d4d;
-}
-.site-navigation ul:first-child {
-	padding-left: 0;
-	border-left: 0 none;
-}
-.site-navigation li {
-	float: left;
-	margin: 0 8px 0 0;
-	padding: 1px 8px;
-}
-.site-navigation ul:first-child li:first-child {
-	padding-left: 0;
-}
-.not-webkit .site-navigation ul:first-child li:first-child + li:first-letter {
-	letter-spacing: -1px;
-}
-.site-navigation li.current-page {
-	background: #555555;
-}
-.site-navigation li.current-page :link,
-.site-navigation li.current-page :visited {
-	color: #ffffff;
-	text-decoration: none;
-}
-
-
-
-/* user-info */
-.user-info {
-	float: left;
-	padding: 0 16px;
-	border-left: 1px solid #4d4d4d;
-	height: 18px;
-	font-size: 13px;
-	white-space: nowrap;
-}
-.user-info dl,
-.user-info dd,
-.user-info nav {
-	display: inline;
-	margin: 0;
-	padding: 0;
-}
-.user-info dl {
-	padding-right: 3px;
-}
-.user-info dt {
-	display: none;
-}
-.user-info dd {
-}
-.user-info img {
-	padding-right: 5px;
-	vertical-align: -5px;
-}
-.user-info .parenthese {
-	margin-left: 1px;
-	margin-right: 1px;
-}
-
-
-
-/* sound-control */
-.sound-control {
-	float: left;
-	width: 104px;
-	height: 18px;
-	padding: 0 0 0 14px;
-	border-left: 1px solid #4d4d4d;
-}
-.sound-control .mute {
-	float: left;
-	margin: 4px 0 0;
-	width: 14px;
-	height: 12px;
-	background: url(../img/icon_sound_01.png) no-repeat scroll 0 50%;
-	cursor: pointer;
-}
-.sound-control .bar {
-	float: right;
-	margin: 2px 0 0;
-	padding: 0 4px 0 3px;
-	width: 80px;
-	height: 15px;
-	background: url(../img/bar_sound_04.png) no-repeat scroll 0 50%, url(../img/bar_sound_03.png) no-repeat scroll 0 50%, url(../img/bar_sound_02.png) no-repeat scroll -80px 50%, url(../img/bar_sound_01.png) no-repeat scroll 3px 50%;
-	visibility: hidden;
-}
-.sound-control:hover .bar {
-	visibility: visible;
-}
-.sound-control.pseudo-muted .mute {
-	background-image: url(../img/icon_sound_02.png);
-}
-
-
-
-/* introduce-ie9 */
-.introduce-ie9 {
-	display: none;
-	float: right;
-	margin: -1px 0 0;
-	padding: 0 0 5px;
-}
-.introduce-ie9 a {
-	display: block;
-	width: 147px;
-	height: 20px;
-	overflow: hidden;
-}
-.introduce-ie9 a:hover::before,
-.introduce-ie9 a:focus::before {
-	content: url(../img/button_ie9_01_h.png);
-}
-
-
-
-/* rights */
-.rights {
-	clear: both;
-	padding: 20px 20px 0;
-	color: #999999;
-	font-size: 10px;
-	font-family: Verdana, sans-serif;
-	line-height: 1;
-}
-.rights ul {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-}
-.rights ul::after {
-	content: '.';
-	clear: both;
-	display: block;
-	height: 0;
-	visibility: hidden;
-}
-.rights li {
-	float: left;
-	margin: 0;
-	padding: 0 14px;
-	height: 1em;
-	border-left: 1px solid #4d4d4d;
-}
-.rights li:first-child {
-	margin-top: -6px;
-	padding-left: 0;
-	border-left: 0 none;
-}
-.rights li + li img {
-	margin-top: -6px;
-}
-.rights p {
-	margin: 15px 0 0 105px;
-}
-
-
 /* panel */
 .floating-mask {
 	display: none;
@@ -405,9 +164,9 @@ video {
 	margin: 0;
 	padding: 10px;
 	height: 16px;
-	background: #333333 url(../img/bg_panel_title_01.png) repeat-x;
 	font-size: 15px;
 	font-weight: normal;
+	background: #333333 url(../img/bg_panel_title_01.png) repeat-x;
 }
 .floating-panel .floating-panel-body {
 	padding: 10px;
@@ -446,9 +205,10 @@ video {
 .floating-panel-body .floating-panel-buttons input[type=submit] {
 	border-style: none;
 	background-color: #000000;
-	background:  url(../img/bg_panel_btn-left_01.png) top left no-repeat, url(../img/bg_panel_btn-right_01.png) top right no-repeat, url(../img/bg_panel_btn-center_01.png) top left repeat-x;
+	background:  url(../img/bg_panel_btn-left_01.png) top left no-repeat, 
+				 url(../img/bg_panel_btn-right_01.png) top right no-repeat, 
+				 url(../img/bg_panel_btn-center_01.png) top left repeat-x;
 	color: #ffffff;
-	font-family: "adobe-garamond-pro-1","adobe-garamond-pro-2",serif;
 	font-size: 16px;
 	line-height: 30px;
 	height: 30px;
@@ -462,21 +222,26 @@ video {
 .floating-panel-body .floating-panel-buttons input[type=submit]:focus {
 	outline: 1px solid #999999;
 }
-
 .floating-panel-body .floating-panel-buttons input[type=button].cancel,
 .floating-panel-body .floating-panel-buttons input[type=submit].cancel {
 	background: #444444;
-	background:  url(../img/bg_panel_cancelbtn-left_01.png) top left no-repeat, url(../img/bg_panel_cancelbtn-right_01.png) top right no-repeat, url(../img/bg_panel_cancelbtn-center_01.png) top center repeat-x;
+	background:  url(../img/bg_panel_cancelbtn-left_01.png) top left no-repeat, 
+	url(../img/bg_panel_cancelbtn-right_01.png) top right no-repeat, 
+	url(../img/bg_panel_cancelbtn-center_01.png) top center repeat-x;
 }
 .floating-panel-body .floating-panel-buttons input[type=button].cancel:hover,
 .floating-panel-body .floating-panel-buttons input[type=submit].cancel:hover {
 	background: #4c4c4c;
-	background:  url(../img/bg_panel_cancelbtn-left_01_h.png) top left no-repeat, url(../img/bg_panel_cancelbtn-right_01_h.png) top right no-repeat, url(../img/bg_panel_cancelbtn-center_01_h.png) top center repeat-x;
+	background:  url(../img/bg_panel_cancelbtn-left_01_h.png) top left no-repeat, 
+	url(../img/bg_panel_cancelbtn-right_01_h.png) top right no-repeat, 
+	url(../img/bg_panel_cancelbtn-center_01_h.png) top center repeat-x; 
 }
 .floating-panel-body .floating-panel-buttons input[type=button]:hover,
 .floating-panel-body .floating-panel-buttons input[type=submit]:hover {
 	background: #444444;
-	background:  url(../img/bg_panel_btn-left_01_h.png) top left no-repeat, url(../img/bg_panel_btn-right_01_h.png) top right no-repeat, url(../img/bg_panel_btn-center_01_h.png) top center repeat-x;
+	background:  url(../img/bg_panel_btn-left_01_h.png) top left no-repeat, 
+	url(../img/bg_panel_btn-right_01_h.png) top right no-repeat, 
+	url(../img/bg_panel_btn-center_01_h.png) top center repeat-x;
 }
 .floating-panel-body .floating-panel-buttons input[type=button][disabled],
 .floating-panel-body .floating-panel-buttons input[type=submit][disabled] {
@@ -498,24 +263,4 @@ video {
 .floating-panel-body .floating-panel-buttons input[type=button],
 .floating-panel-body .floating-panel-buttons input[type=submit] {
 	margin: 0 10px 0 11px;
-}
-
-.tech-review-dialog {
-	margin: -287px -426px -213px;
-	width: 852px;
-	height: 462px;
-}
-.tech-review-dialog .floating-panel-body {
-	padding: 0;
-	width: 852px;
-	height: 426px;
-	overflow: hidden;
-}
-.tech-review-dialog iframe {
-	display: block;
-	margin: 0;
-	padding: 0;
-	border: 0 none;
-	width: 852px;
-	height: 426px;
 }
