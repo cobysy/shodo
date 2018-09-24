@@ -1,5 +1,5 @@
 <p align="center">
-<img alt="Split.js" title="Split.js" src="https://raw.githubusercontent.com/cobysy/Shodo/master/docs/screenshot.png" width="650">
+<img alt="theshodo.com | revived" title="theshodo.com | revived" src="https://raw.githubusercontent.com/cobysy/Shodo/master/docs/screenshot.png" width="650">
 </p>
 
 # theshodo.com | revived
@@ -25,7 +25,7 @@ Some smaller changes have been made in order to bring back the application into 
 
 The goal of this project was to kill time (my ISP went down over the weekend), and get to play with JS.
 
-Not sure how much time I will spend on maintaining this (since it's mostly just a novelty), but would like to implement an 'undo' feature (the code base already has fragments of it), generating a animated clip with the strokes, and maybe a share on social media feature.
+Not sure how much time I will spend on maintaining this (since it's mostly just a novelty), but would like to implement an 'undo' feature (the code base already has fragments of it), generating an animated clip with the strokes, and maybe a share on social media feature.
 
 ## License
 
