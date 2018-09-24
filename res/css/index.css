@@ -1,7 +1,7 @@
 @namespace svg "http://www.w3.org/2000/svg";
 
 body {
-	-ms-touch-action: none;
+	touch-action: none;
 	-ms-touch-select: none;
 
 	-webkit-user-select: none;
@@ -398,10 +398,10 @@ article.content
 	color: #ffffff;
 	text-align: center;
 	text-decoration: none;
-	/* background: url(../img/bg_topmenu_btn-left_01.png) top left no-repeat, 
-				url(../img/bg_topmenu_btn-center_01.png) top center repeat-x; */
-}
-#top-menu > li > a:hover
+	background: -moz-linear-gradient(top, #45484d 0%, #000000 50%,#000000 100%);
+	background: -webkit-linear-gradient(top, #45484d 0%, #000000 50%,#000000 100%);
+	background: linear-gradient(to bottom, #45484d 0%, #000000 50%,#000000 100%);
+}#p-menu > li > a:hover
 {
 	color: #ffffff;
 	background-color: #444444;
@@ -464,8 +464,10 @@ article.content
 	width: 225px;  /* Overridable */
 	height: 300px;
 	background: #1f1f1f; /* url(../img/bg_copybook_01.svg); */
-	background-image: -ms-linear-gradient(top, #1F1F1F 0%, #333333 100%);
-	background-image: linear-gradient(top, #1F1F1F 0%, #333333 100%);
+	background: -moz-linear-gradient(top, #1F1F1F 0%, #333333 100%);
+	background: -webkit-linear-gradient(top, #1F1F1F 0%, #333333 100%);
+	background: linear-gradient(to bottom, #1F1F1F 0%, #333333 100%);
+
 	padding: 36px 18px 18px;
 	margin: 0;
 }
@@ -567,7 +569,7 @@ article.content
 }
 #top-menu .menu-folding .close-menu:before
 {
-	/* content: url(../img/icon_close_01.png); */
+	content: url(../img/icon_close_01.png);
 	padding-right: 2px;
 	vertical-align: -1px;
 }
@@ -930,7 +932,7 @@ article.content
 	margin: 0;
 	padding: 2px 0 2px 1px;
 	width: 22px;
-	/* background: url(../img/bg_tenkoku-middle_01.png) 0 0 repeat-y; */
+	background: url(../img/bg_tenkoku-middle_01.png) 0 0 repeat-y;
 	color: #c9171e;
 	font-size: 10px;
 	line-height: 10px;
@@ -938,14 +940,14 @@ article.content
 	text-align: center;
 }
 .panel-finish .tenkoku:before {
-	/* content: url(../img/bg_tenkoku-top_01.png); */
+	content: url(../img/bg_tenkoku-top_01.png);
 	display: block;
 	position: absolute;
 	top: -8px;
 	left: 0;
 }
 .panel-finish .tenkoku:after {
-	/* content: url(../img/bg_tenkoku-bottom_01.png); */
+	content: url(../img/bg_tenkoku-bottom_01.png);
 	display: block;
 	position: absolute;
 	bottom: -3px;

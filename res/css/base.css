@@ -156,7 +156,7 @@ a {
 	left: 50%;
 	margin: -149px 0 0 -185px;
 	width: 370px;
-	background: #666666; /* url(../img/bg_panel_body_01.svg); */
+	background: #666666 url(../img/bg_panel_body_01.svg);
 	color: #ffffff;
 	box-shadow: 0 0 7px 1px rgba(0,0,0,0.65);
 }
@@ -164,9 +164,9 @@ a {
 	margin: 0;
 	padding: 10px;
 	height: 16px;
-	background: #333333; /* url(../img/bg_panel_title_01.png) repeat-x; */
 	font-size: 15px;
 	font-weight: normal;
+	background: #333333 url(../img/bg_panel_title_01.png) repeat-x;
 }
 .floating-panel .floating-panel-body {
 	padding: 10px;
@@ -186,13 +186,13 @@ a {
 }
 .floating-panel .floating-panel-close :link:before,
 .floating-panel .floating-panel-close :visited:before {
-	/* content: url(../img/icon_close_01.png); */
+	content: url(../img/icon_close_01.png);
 	padding-right: 2px;
 	vertical-align: -1px;
 }
 .floating-panel .floating-panel-close :link:hover:before,
 .floating-panel .floating-panel-close :visited:hover:before {
-	/* content: url(../img/icon_close_01_h.png); */
+	content: url(../img/icon_close_01_h.png);
 }
 
 .floating-panel-body .floating-panel-buttons {
@@ -205,9 +205,9 @@ a {
 .floating-panel-body .floating-panel-buttons input[type=submit] {
 	border-style: none;
 	background-color: #000000;
-	/* background:  url(../img/bg_panel_btn-left_01.png) top left no-repeat, 
+	background:  url(../img/bg_panel_btn-left_01.png) top left no-repeat, 
 				 url(../img/bg_panel_btn-right_01.png) top right no-repeat, 
-				 url(../img/bg_panel_btn-center_01.png) top left repeat-x; */
+				 url(../img/bg_panel_btn-center_01.png) top left repeat-x;
 	color: #ffffff;
 	font-size: 16px;
 	line-height: 30px;
@@ -222,27 +222,26 @@ a {
 .floating-panel-body .floating-panel-buttons input[type=submit]:focus {
 	outline: 1px solid #999999;
 }
-
 .floating-panel-body .floating-panel-buttons input[type=button].cancel,
 .floating-panel-body .floating-panel-buttons input[type=submit].cancel {
 	background: #444444;
-	/* background:  url(../img/bg_panel_cancelbtn-left_01.png) top left no-repeat, 
+	background:  url(../img/bg_panel_cancelbtn-left_01.png) top left no-repeat, 
 	url(../img/bg_panel_cancelbtn-right_01.png) top right no-repeat, 
-	url(../img/bg_panel_cancelbtn-center_01.png) top center repeat-x; */
+	url(../img/bg_panel_cancelbtn-center_01.png) top center repeat-x;
 }
 .floating-panel-body .floating-panel-buttons input[type=button].cancel:hover,
 .floating-panel-body .floating-panel-buttons input[type=submit].cancel:hover {
 	background: #4c4c4c;
-	/* background:  url(../img/bg_panel_cancelbtn-left_01_h.png) top left no-repeat, 
+	background:  url(../img/bg_panel_cancelbtn-left_01_h.png) top left no-repeat, 
 	url(../img/bg_panel_cancelbtn-right_01_h.png) top right no-repeat, 
-	url(../img/bg_panel_cancelbtn-center_01_h.png) top center repeat-x; */
+	url(../img/bg_panel_cancelbtn-center_01_h.png) top center repeat-x; 
 }
 .floating-panel-body .floating-panel-buttons input[type=button]:hover,
 .floating-panel-body .floating-panel-buttons input[type=submit]:hover {
 	background: #444444;
-	/* background:  url(../img/bg_panel_btn-left_01_h.png) top left no-repeat, 
+	background:  url(../img/bg_panel_btn-left_01_h.png) top left no-repeat, 
 	url(../img/bg_panel_btn-right_01_h.png) top right no-repeat, 
-	url(../img/bg_panel_btn-center_01_h.png) top center repeat-x; */
+	url(../img/bg_panel_btn-center_01_h.png) top center repeat-x;
 }
 .floating-panel-body .floating-panel-buttons input[type=button][disabled],
 .floating-panel-body .floating-panel-buttons input[type=submit][disabled] {
