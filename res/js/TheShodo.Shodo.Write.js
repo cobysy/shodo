@@ -8,7 +8,6 @@ TheShodo.Shodo.Write = {
     videoFadeOutDuration  : 600,
     videoFadeOutTiming    : 15.5,
     alwaysSkipIntro       : false,
-    isUAInlineSVGSupported: false,
     preloadImages         : [
         '/res/img/icon_checkbox_01.png',
         //'/res/img/icon_checkbox_01_o.png',
