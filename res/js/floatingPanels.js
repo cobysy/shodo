@@ -152,16 +152,70 @@ TheShodo.Shodo.Write.PanelSelectPaper.prototype.onPaperSelected = function (pape
 TheShodo.Shodo.Write.PanelFinish = function () {
     this.className = 'panel-finish';
     this.selectorOrContent = $('#floating-panel-content-finish').html();
+    var _this = this;
     this.buttons = [
         {
-            label: TheShodo.Shodo.Resources.Write.String.Panel_Cancel || 'Cancel',
-            isCancel: true,
+            label: 'Replay',
+            //isCancel: true,
             onClick: function (sender, e) {
-                sender.close();
+                //sender.close();
+                
+                e.preventDefault();
+
+                // stop replay if player is running
+                if (TheShodo.Shodo.Write.CurrentPlayer != null) {
+                    TheShodo.Shodo.Write.CurrentPlayer.stop();
+                    return;
+                }
+
+                $(e.target).val(TheShodo.Shodo.Resources.Write.String.Panel_Replay_Stop || 'Stop');
+                _this.content.find(".tenkoku").fadeOut();
+
+                // swap img -> canvas
+                var img = _this.content
+                  .find("img.preview")
+                  .get(0);
+                var canvas = document.createElement('canvas');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                _this.content
+                  .find("img.preview")
+                  .replaceWith(canvas);
+
+                // Player Setup
+                TheShodo.Shodo.Write.CurrentPlayer = new TheShodo.Shodo.Player(canvas.width,
+                    canvas.height,
+                    canvas,
+                    {
+                        Version: 2
+                        , Strokes: JSON.stringify(TheShodo.Shodo.Shared.StrokeManager.strokeHistory)
+                        , Width: TheShodo.Shodo.Shared.StrokeEngine.width
+                        , Height: TheShodo.Shodo.Shared.StrokeEngine.height
+                    });
+                TheShodo.Shodo.Write.CurrentPlayer.backgroundImage = $('#hanshi-image').get(0);
+                TheShodo.Shodo.Write.CurrentPlayer.onStopped = $.proxy(
+                  function() {
+                    // swap canvas -> img
+                    TheShodo.Shodo.Write.CurrentPlayer = null;
+                    $(canvas).replaceWith(img);
+
+                    if (_this.getTenkoku() != "") {
+                      _this.content.find(".tenkoku").fadeIn();
+                    }
+
+                    $(e.target).val(
+                      TheShodo.Shodo.Resources.Write.String
+                        .Panel_Replay || "Replay"
+                    );
+                  },
+                  _this
+                );
+
+                TheShodo.Shodo.Write.CurrentPlayer.play();
             }
         },
         {
-            label: TheShodo.Shodo.Resources.Write.String.Panel_Finish_SaveToGallery || 'Save to Gallery',
+            label: 'Download',
             className: 'button save-button',
             isSubmit: true,
             onClick: function (sender, e) {
@@ -254,63 +308,6 @@ TheShodo.Shodo.Write.PanelFinish.prototype.onBeforePanelShow = function (imageDa
                 this.updateTenkoku(e.target.value);
             }, this))
             .end()
-        .find('[name=Comment]')
-            .keyup($.proxy(function (e) {
-                this.comment = e.target.value;
-                this.validate();
-            }, this))
-            .end()
-        ;
-
-    // Replay
-    this.content
-        .find('a.replay')
-            .click($.proxy(function (e) {
-                    e.preventDefault();
-
-                    // stop replay if player is running
-                    if (TheShodo.Shodo.Write.CurrentPlayer != null) {
-                        TheShodo.Shodo.Write.CurrentPlayer.stop();
-                        return;
-                    }
-
-                   $(e.target).text(TheShodo.Shodo.Resources.Write.String.Panel_Replay_Stop || 'Stop');
-                    this.content.find('.tenkoku').fadeOut();
-                
-                    // swap img -> canvas
-                    var img = this.content.find('img.preview').get(0);
-                    var canvas = document.createElement('canvas');
-                    canvas.width = img.width;
-                    canvas.height = img.height;
-                    this.content.find('img.preview').replaceWith(canvas);
-
-                    // Player Setup
-                    TheShodo.Shodo.Write.CurrentPlayer = new TheShodo.Shodo.Player(canvas.width,
-                                                                                   canvas.height,
-                                                                                   canvas,
-                                                                                   {
-                                                                                         Version: 2
-                                                                                       , Strokes: JSON.stringify(TheShodo.Shodo.Shared.StrokeManager.strokeHistory)
-                                                                                       , Width:   TheShodo.Shodo.Shared.StrokeEngine.width
-                                                                                       , Height:  TheShodo.Shodo.Shared.StrokeEngine.height
-                                                                                   });
-                    TheShodo.Shodo.Write.CurrentPlayer.backgroundImage = $('#hanshi-image').get(0);
-                    TheShodo.Shodo.Write.CurrentPlayer.onStopped = $.proxy(function () {
-                        // swap canvas -> img
-                        TheShodo.Shodo.Write.CurrentPlayer = null;
-                        $(canvas).replaceWith(img);
-                        
-                        if (this.getTenkoku() != "") {
-                            this.content.find('.tenkoku').fadeIn();
-                        }
-                        
-                        $(e.target).text(TheShodo.Shodo.Resources.Write.String.Panel_Replay || 'Replay');
-                    }, this);
-                    
-                    TheShodo.Shodo.Write.CurrentPlayer.play();
-
-                }, this))
-                .end()
         ;
 
     this.updateTenkoku(defaultName);

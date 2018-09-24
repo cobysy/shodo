@@ -953,12 +953,6 @@ article.content
 	bottom: -3px;
 	left: 0;
 }
-.panel-finish a.replay {
-	text-decoration: none;
-	font-size: 12px;
-	padding-left: 14px;
-	/* background: url(../img/icon_replay_02.png) center left no-repeat; */
-}
 
 /* Panel loading */
 .panel-loading {
