@@ -4,7 +4,7 @@
 
 if (!TheShodo.Shodo) TheShodo.Shodo = {};
 
-TheShodo.Shodo.Player = function (width, height, canvas, strokeData) {
+TheShodo.Shodo.Player = function(width, height, canvas, strokeData) {
     /// <summary></summary>
     /// <param name="width">target canvas width</param>
     /// <param name="height">target canvas height</param>
@@ -38,7 +38,7 @@ TheShodo.Shodo.Player.PlayState = {
     Pausing: 2
 }
 
-TheShodo.Shodo.Player.prototype.setSpeed = function (value) {
+TheShodo.Shodo.Player.prototype.setSpeed = function(value) {
     /// <summary></summary>
     /// <param name="value"></param>
     this._speed = value;
@@ -47,12 +47,12 @@ TheShodo.Shodo.Player.prototype.setSpeed = function (value) {
     }
 }
 
-TheShodo.Shodo.Player.prototype.getSpeed = function () {
+TheShodo.Shodo.Player.prototype.getSpeed = function() {
     /// <summary></summary>
     return this._speed;
 }
 
-TheShodo.Shodo.Player.prototype.createCroppedBackgroundPaperImage = function (backgroundImage, width, height) {
+TheShodo.Shodo.Player.prototype.createCroppedBackgroundPaperImage = function(backgroundImage, width, height) {
     /// <summary></summary>
     var backgroundCanvas = document.createElement('canvas');
     backgroundCanvas.width = width;
@@ -62,11 +62,11 @@ TheShodo.Shodo.Player.prototype.createCroppedBackgroundPaperImage = function (ba
     var ratio = backgroundCanvas.width / backgroundImage.naturalWidth;
     var imgHeight = Math.round(backgroundImage.naturalHeight * ratio);
     var top = imgHeight - backgroundCanvas.height;
-    backgroundCanvasCtx.drawImage(backgroundImage, 0, -top, backgroundCanvas.width, backgroundCanvas.height+top);
+    backgroundCanvasCtx.drawImage(backgroundImage, 0, -top, backgroundCanvas.width, backgroundCanvas.height + top);
     return backgroundCanvas;
 }
 
-TheShodo.Shodo.Player.prototype.onTick = function () {
+TheShodo.Shodo.Player.prototype.onTick = function() {
     /// <summary></summary>
     if (this.state != TheShodo.Shodo.Player.PlayState.Playing)
         return;
@@ -77,7 +77,7 @@ TheShodo.Shodo.Player.prototype.onTick = function () {
             return;
         }
         var op = this.strokeHistoryWork.shift();
-        
+
         this.strokeEngine.endStroke();
         this.strokeEngine.beginStroke();
 
@@ -89,7 +89,7 @@ TheShodo.Shodo.Player.prototype.onTick = function () {
             case TheShodo.Shodo.StrokeManager.StrokeOperation.SetBrush:
                 this.strokeEngine.selectBrush(op.D);
                 return;
-            
+
             case TheShodo.Shodo.StrokeManager.StrokeOperation.SetOpacity:
                 this.strokeEngine.setBrushOpacity(op.D);
                 this.__currentOpacity = op.D; // TODO:
@@ -103,7 +103,7 @@ TheShodo.Shodo.Player.prototype.onTick = function () {
 
     var pos = this.currentStroke.shift();
     if (pos) {
-        this.strokeEngine.addStrokePosition({ x:pos.X, y:pos.Y, t:pos.T, p:pos.P });
+        this.strokeEngine.addStrokePosition({ x: pos.X, y: pos.Y, t: pos.T, p: pos.P });
         this.strokeEngine.draw();
     }
 
@@ -119,9 +119,9 @@ TheShodo.Shodo.Player.prototype.onTick = function () {
         ctx.fillRect(0, 0, this.width, this.height);
     }
     ctx.drawImage(this.compositedCanvas,
-                  0, 0, this.dummyCanvas.width, this.dummyCanvas.height, /* src */
-                  0, 0, this.width, this.height /* dst */);
-    
+        0, 0, this.dummyCanvas.width, this.dummyCanvas.height, /* src */
+        0, 0, this.width, this.height /* dst */ );
+
     // emulate
     if (this.__currentOpacity) {
         ctx.globalAlpha = this.__currentOpacity;
@@ -129,21 +129,21 @@ TheShodo.Shodo.Player.prototype.onTick = function () {
         ctx.globalAlpha = 1;
     }
     ctx.drawImage(this.dummyCanvas,
-                  0, 0, this.dummyCanvas.width, this.dummyCanvas.height, /* src */
-                  0, 0, this.width, this.height /* dst */);
+        0, 0, this.dummyCanvas.width, this.dummyCanvas.height, /* src */
+        0, 0, this.width, this.height /* dst */ );
     ctx.restore();
 }
 
-TheShodo.Shodo.Player.prototype.startTimer = function () {
+TheShodo.Shodo.Player.prototype.startTimer = function() {
     /// <summary></summary>
     if (this.timer != null)
         clearInterval(this.timer);
 
     var self = this;
-    this.timer = setInterval(function () { self.onTick(); }, 16 / this._speed);
+    this.timer = setInterval(function() { self.onTick(); }, 16 / this._speed);
 }
 
-TheShodo.Shodo.Player.prototype.play = function () {
+TheShodo.Shodo.Player.prototype.play = function() {
     /// <summary></summary>
     if (this.state == TheShodo.Shodo.Player.PlayState.Stopped) {
         var ctx = $(this.canvas).get(0).getContext('2d');
@@ -159,7 +159,7 @@ TheShodo.Shodo.Player.prototype.play = function () {
     if (this.backgroundImage != null) {
         this.backgroundImage = this.createCroppedBackgroundPaperImage(this.backgroundImage, this.width, this.height);
     }
-    
+
     this.state = TheShodo.Shodo.Player.PlayState.Playing;
     this.startTimer();
 
@@ -167,7 +167,7 @@ TheShodo.Shodo.Player.prototype.play = function () {
         this.onPlayStarted();
 }
 
-TheShodo.Shodo.Player.prototype.pause = function () {
+TheShodo.Shodo.Player.prototype.pause = function() {
     /// <summary></summary>
     this.state = TheShodo.Shodo.Player.PlayState.Pausing;
 
@@ -176,7 +176,7 @@ TheShodo.Shodo.Player.prototype.pause = function () {
 }
 
 
-TheShodo.Shodo.Player.prototype.stop = function () {
+TheShodo.Shodo.Player.prototype.stop = function() {
     /// <summary></summary>
     this.state = TheShodo.Shodo.Player.PlayState.Stopped;
     clearInterval(this.timer);

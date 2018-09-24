@@ -1,19 +1,19 @@
-(function($TS){
+(function($TS) {
 
     $(document).ready(function() {
         // Initialize Once
         $TS.FloatingPanel.Shared = {};
-        $TS.FloatingPanel.Shared.floatingMask  = null;
+        $TS.FloatingPanel.Shared.floatingMask = null;
         $TS.FloatingPanel.Shared.floatingPanel = null;
-        $TS.FloatingPanel.Shared.currentPanel  = null;
-        $TS.FloatingPanel.Shared.currentPanelStack  = [];
+        $TS.FloatingPanel.Shared.currentPanel = null;
+        $TS.FloatingPanel.Shared.currentPanelStack = [];
 
         $TS.FloatingPanel.Shared.floatingPanelTemplate = $('<div><div class="floating-mask" /></div>').find('.floating-mask').html($('.floating-mask').html()).end().html();
-        $TS.FloatingPanel.Shared.floatingMask  = $('.floating-mask');
+        $TS.FloatingPanel.Shared.floatingMask = $('.floating-mask');
         $TS.FloatingPanel.Shared.floatingPanel = $('.floating-panel', TheShodo.FloatingPanel.Shared.floatingMask);
     });
 
-    $TS.FloatingPanel = function (title, selectorOrContent, options) {
+    $TS.FloatingPanel = function(title, selectorOrContent, options) {
         /// <summary>Create FloatingPanel Instance</summary>
         /// <param name="title">title</param>
         /// <param name="selectorOrContent">a jQuery selector or content HTML</param>
@@ -55,41 +55,39 @@
         */
         this.title = title;
         this.selectorOrContent = selectorOrContent;
-        this.content    = null;
+        this.content = null;
         options = $.extend({
-                                hasButtons    : false,
-                                hasClose      : true,
-                                hasTitle      : true,
-                                buttons       : [],
-                                className     : '',
-                                maskClassName : '',
-                                cancelOnEscKey: true
-                            }, options);
+            hasButtons: false,
+            hasClose: true,
+            hasTitle: true,
+            buttons: [],
+            className: '',
+            maskClassName: '',
+            cancelOnEscKey: true
+        }, options);
 
-        this.hasButtons     = options.hasButtons;
-        this.hasClose       = options.hasClose;
-        this.hasTitle       = options.hasTitle;
-        this.buttons        = options.buttons;
-        this.className      = options.className;
-        this.maskClassName  = options.maskClassName;
-        this.isolated       = options.isolated;
+        this.hasButtons = options.hasButtons;
+        this.hasClose = options.hasClose;
+        this.hasTitle = options.hasTitle;
+        this.buttons = options.buttons;
+        this.className = options.className;
+        this.maskClassName = options.maskClassName;
+        this.isolated = options.isolated;
         this.cancelOnEscKey = options.cancelOnEscKey;
 
-        this.panel            = null;
+        this.panel = null;
         this.buttonsContainer = null;
-        this.defaultButton    = null;
-        this.cancelButton     = null;
+        this.defaultButton = null;
+        this.cancelButton = null;
 
         this.initialize();
     }
 
-    $TS.FloatingPanel.prototype.initialize = function () {
-    }
+    $TS.FloatingPanel.prototype.initialize = function() {}
 
-    $TS.FloatingPanel.prototype.prepareContent = function () {
+    $TS.FloatingPanel.prototype.prepareContent = function() {
         var self = this;
-        this.mask = (this.isolated) ? $($TS.FloatingPanel.Shared.floatingPanelTemplate)
-                                    : $TS.FloatingPanel.Shared.floatingMask;
+        this.mask = (this.isolated) ? $($TS.FloatingPanel.Shared.floatingPanelTemplate) : $TS.FloatingPanel.Shared.floatingMask;
         this.panel = $('.floating-panel', this.mask);
 
         if (this.isolated) {
@@ -101,25 +99,24 @@
 
         this.panel
             .find('.floating-panel-buttons')
-                .toggle(this.hasButtons)
-                .end()
+            .toggle(this.hasButtons)
+            .end()
             .find('.floating-panel-close')
-                .toggle(this.hasClose && this.hasTitle)
-                .click($.proxy(function (e) {
-                    e.preventDefault();
-                    if (this.onCloseClicked(e)) {
-                        this.close();
-                    }
-                }, this))
-                .end()
+            .toggle(this.hasClose && this.hasTitle)
+            .click($.proxy(function(e) {
+                e.preventDefault();
+                if (this.onCloseClicked(e)) {
+                    this.close();
+                }
+            }, this))
+            .end()
             .find('.floating-panel-title')
-                .text(this.title)
-                .toggle(this.hasTitle)
-                .end()
+            .text(this.title)
+            .toggle(this.hasTitle)
+            .end()
             .find('.floating-panel-body-content')
-                .html(this.content)
-                .end()
-            ;
+            .html(this.content)
+            .end();
 
         if (this.className && this.className != '') {
             this.panel.addClass(this.className);
@@ -132,14 +129,14 @@
             var buttonsContainer = this.panel.find('.floating-panel-buttons');
             buttonsContainer.show().find('*').remove();
 
-            this.buttons.forEach(function (button) {
-                var buttonE = $('<input type="'+ (button.isSubmit ? 'submit' : 'button') + '" value="" />')
-                                .val(button.label)
-                                .addClass(button.className ? button.className : 'button')
-                                .click(function (e) {
-                                    e.preventDefault();
-                                    self.onButtonClicked(button, e);
-                                });
+            this.buttons.forEach(function(button) {
+                var buttonE = $('<input type="' + (button.isSubmit ? 'submit' : 'button') + '" value="" />')
+                    .val(button.label)
+                    .addClass(button.className ? button.className : 'button')
+                    .click(function(e) {
+                        e.preventDefault();
+                        self.onButtonClicked(button, e);
+                    });
                 buttonsContainer.append(buttonE);
 
                 if (self.defaultButton == null) {
@@ -162,7 +159,7 @@
         // cancel event
         if (this.cancelOnEscKey) {
             this.panel
-                .keyup(function (e) {
+                .keyup(function(e) {
                     // ESC key
                     if (e.keyCode == 27) {
                         if (self.hasClose) {
@@ -171,14 +168,13 @@
                             self.cancelButton.click();
                         }
                     }
-                })
-            ;
+                });
         }
 
         this.disableAllFocus();
     }
 
-    $TS.FloatingPanel.prototype.dispose = function () {
+    $TS.FloatingPanel.prototype.dispose = function() {
         if (this.maskClassName != null && this.maskClassName != '') {
             this.mask.removeClass(this.maskClassName);
         }
@@ -200,29 +196,29 @@
         }
     }
 
-    $TS.FloatingPanel.prototype.preventFocus = function (e) {
+    $TS.FloatingPanel.prototype.preventFocus = function(e) {
         if ($(e.target).parents('.floating-panel-body').length == 0) {
             e.preventDefault();
             $(this.panel).find('a:visible,input:visible,button:visible').get(0).focus();
         }
     }
 
-    $TS.FloatingPanel.prototype.disableAllFocus = function () {
+    $TS.FloatingPanel.prototype.disableAllFocus = function() {
         $('body').delegate('a, input, button', 'focusin', $.proxy(this.preventFocus, this));
     }
 
-    $TS.FloatingPanel.prototype.enableAllFocus = function () {
+    $TS.FloatingPanel.prototype.enableAllFocus = function() {
         $('body').undelegate('a, input, button', 'focusin', $.proxy(this.preventFocus, this));
     }
 
-    $TS.FloatingPanel.prototype.show = function () {
+    $TS.FloatingPanel.prototype.show = function() {
         /// <summary>Show Floating Panel</summary>
         var self = this;
         var args = Array.prototype.slice.apply(arguments);
 
         if (!this.isolated) {
             if ($TS.FloatingPanel.Shared.currentPanel) {
-                $TS.FloatingPanel.Shared.currentPanel.close(true, function () { self.show.apply(self, args); });
+                $TS.FloatingPanel.Shared.currentPanel.close(true, function() { self.show.apply(self, args); });
                 return; // after
             }
         }
@@ -232,9 +228,9 @@
 
         this.panel.css('top', '48%').show().css('opacity', 0);
 
-        this.mask.fadeIn('fast', function () {
+        this.mask.fadeIn('fast', function() {
             //$TS.FloatingPanel.Shared.floatingPanel.fadeIn('fast', self.onPanelShown);
-            self.panel.animate({ opacity: 1, top: '50%' }, 100, function (e) {
+            self.panel.animate({ opacity: 1, top: '50%' }, 100, function(e) {
                 if (self.defaultButton != null && self.defaultButton != undefined) {
                     self.defaultButton.focus();
                 }
@@ -248,7 +244,7 @@
         $TS.FloatingPanel.Shared.currentPanelStack.push(this);
     }
 
-    $TS.FloatingPanel.prototype.close = function (preventHideMask, onAfterClosed) {
+    $TS.FloatingPanel.prototype.close = function(preventHideMask, onAfterClosed) {
         /// <summary>Close Floating Panel</summary>
         /// <param name="preventHideMask">Prevent hiding a mask layer</param>
         /// <param name="onAfterClosed">Handle on a floating panel closed.</param>
@@ -260,32 +256,33 @@
         $TS.FloatingPanel.Shared.currentPanelStack.pop();
 
         //$TS.FloatingPanel.Shared.floatingPanel.fadeOut('fast', function () {
-        this.panel.animate({ opacity: 0, top: '52%' }, 100, function () {
+        this.panel.animate({ opacity: 0, top: '52%' }, 100, function() {
             if (self.onPanelClosed)
                 self.onPanelClosed();
 
             self.dispose();
 
             if (!preventHideMask) {
-                self.mask.fadeOut('fast', function () {
+                self.mask.fadeOut('fast', function() {
                     if (onAfterClosed)
                         onAfterClosed();
                 });
             } else {
                 if (onAfterClosed)
-                     onAfterClosed();
+                    onAfterClosed();
             }
         });
 
     }
 
     // Events
-    $TS.FloatingPanel.prototype.onBeforePanelShow = function (/* FloatingPanel#show method arguments */) {}
-    $TS.FloatingPanel.prototype.onPanelShown = function () {}
-    $TS.FloatingPanel.prototype.onPanelClosed = function () {}
-    $TS.FloatingPanel.prototype.onCloseClicked = function (e) { return true; }
-    $TS.FloatingPanel.prototype.onCanceled = function (sender, e, button) { }
-    $TS.FloatingPanel.prototype.onButtonClicked = function (button, e) {
+    $TS.FloatingPanel.prototype.onBeforePanelShow = function( /* FloatingPanel#show method arguments */ ) {}
+    $TS.FloatingPanel.prototype.onPanelShown = function() {}
+    $TS.FloatingPanel.prototype.onPanelClosed = function() {}
+    $TS.FloatingPanel.prototype.onCloseClicked = function(e) {
+        return true; }
+    $TS.FloatingPanel.prototype.onCanceled = function(sender, e, button) {}
+    $TS.FloatingPanel.prototype.onButtonClicked = function(button, e) {
         if (button.isCancel) {
             if (button.onClick)
                 button.onClick(this, e);
@@ -298,7 +295,7 @@
 
 
     // -- Confirm Panel
-    $TS.FloatingPanel.MessageBox = function (title, message, buttons, hasClose) {
+    $TS.FloatingPanel.MessageBox = function(title, message, buttons, hasClose) {
         /// <summmary>FloatingPanel: Generic Message Box</summary>
         /// <example>
         /// var confirmPanel = new TheShodo.FloatingPanel.MessageBox("Hauhau?", "Really?", [
@@ -321,12 +318,11 @@
     $TS.FloatingPanel.MessageBox.prototype.onBeforePanelShow = function() {
         var self = this;
         this.content
-                    .find('.label')
-                        .text(this.message)
-                        .end()
-                    ;
+            .find('.label')
+            .text(this.message)
+            .end();
     }
-    $TS.FloatingPanel.MessageBox.show = function (title, message, buttons, hasClose) {
+    $TS.FloatingPanel.MessageBox.show = function(title, message, buttons, hasClose) {
         new $TS.FloatingPanel.MessageBox(title, message, (buttons || [{ label: 'OK', isCancel: true, isDefault: true }]), hasClose).show();
     }
 
