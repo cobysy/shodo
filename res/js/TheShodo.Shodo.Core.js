@@ -235,47 +235,68 @@ TheShodo.Shodo.StrokeManager.prototype.start = function() {
                 handE.fadeOut('fast');
         }, false);
     } else {
+        function onStart(e){
+            console.log('onStart')
+            e.preventDefault();
+            isMouseDown = true;
+
+            var x = e.pageX - offset.left;
+            var y = e.pageY - offset.top;
+            handE.css('top', y);
+            handE.css('left', x);
+
+            if (self.isHandVisible)
+                handE.fadeIn('fast');
+
+            self.beginStroke();
+        }
+        function onDraw(e){
+            console.log('onDraw',e.touches)
+            e.preventDefault();
+            e.stopPropagation(),e.touches && (e = e.touches[0]);
+            if (!isMouseDown) return;
+
+            var x = e.pageX - offset.left;
+            var y = e.pageY - offset.top;
+
+            console.log(x,y)
+
+            self.addStrokePosition(x, y);
+
+            handE.css('top', y);
+            handE.css('left', x);
+        }
+        function onEnd(e){
+            console.log('onEnd')
+            e.preventDefault();
+            if (!isMouseDown) return;
+            isMouseDown = false;
+
+            var x = e.pageX - offset.left;
+            var y = e.pageY - offset.top;
+
+            self.endStroke();
+
+            if (self.isHandVisible)
+                handE.fadeOut('fast');
+        }
+
+         function isSupportTouch(){
+            var touchObj={};
+            touchObj.isSupportTouch = "ontouchend" in document ? true : false;
+            touchObj.isEvent=touchObj.isSupportTouch?'touchstart':'click';
+            return touchObj.isEvent;
+        }
         handCanvasObject
-            .on('mousedown', function(e) {
-                e.preventDefault();
-                isMouseDown = true;
+            .on('mousedown', onStart)
+            .on('mousemove', onDraw)
+            .on('mouseup', onEnd);
 
-                var x = e.pageX - offset.left;
-                var y = e.pageY - offset.top;
-                handE.css('top', y);
-                handE.css('left', x);
-
-                if (self.isHandVisible)
-                    handE.fadeIn('fast');
-
-                self.beginStroke();
-            })
-            .on('mousemove', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                if (!isMouseDown) return;
-
-                var x = e.pageX - offset.left;
-                var y = e.pageY - offset.top;
-
-                self.addStrokePosition(x, y);
-
-                handE.css('top', y);
-                handE.css('left', x);
-            })
-            .on('mouseup', function(e) {
-                e.preventDefault();
-                if (!isMouseDown) return;
-                isMouseDown = false;
-
-                var x = e.pageX - offset.left;
-                var y = e.pageY - offset.top;
-
-                self.endStroke();
-
-                if (self.isHandVisible)
-                    handE.fadeOut('fast');
-            });
+        if(isSupportTouch()){
+            handCanvasObject[0].addEventListener('touchstart',onStart,false);
+            handCanvasObject[0].addEventListener('touchmove',onDraw,false);
+            handCanvasObject[0].addEventListener('touchend',onEnd,false);
+        }
     }
 }
 
